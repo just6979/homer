@@ -1,0 +1,33 @@
+# defaults: monitor on, bigger buffers, no start message
+defmonitor on
+defobuflimit 8192
+defscrollback 8192
+startup_message off
+
+vbell off
+msgwait 3
+
+# use funny messages
+nethack on
+
+# don't use the alt buffer and push output directly into the scrollback
+termcapinfo xterm*|xterms|xs ti=\E7\E[?47l
+
+# tell screen that xterm can switch to dark background
+termcapinfo xterm* 'VR=\E[?5h:VN=\E[?5l'
+
+# special xterm hardstatus: use the window title (konsole doesn't need this)
+termcapinfo xterm* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+# show hardstatus on the last line if the terminal doesn't have a status line
+hardstatus lastline
+
+# show hardstatus (# of windows, pwd) and  window list. will go to title bar in konsole
+hardstatus string "%{ck}%h %{wk}%?%-Lw%?%{bw}%n*%f%t%?(%u)%?%{wk}%?%+Lw%?"
+
+# set the window title based on command running
+shelltitle ']$ |bash'
+
+bind ^h hardstatus lastline
+bind ^l hardstatus alwayslastline
+

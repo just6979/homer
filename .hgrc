@@ -1,0 +1,26 @@
+[ui]
+username = Justin White <just6979@gmail.com>
+style = compact
+ignore = ~/.hgignore
+
+[extensions]
+color =
+extdiff =
+fetch =
+pager =
+progress =
+purge =
+
+[alias]
+st = status -mard
+sc = status -mardc
+sa = status -mardciu
+# show last 4 changes
+last = log -p -r -1:-4
+
+[extdiff]
+cmd.vdiff = kompare
+cmd.cdiff = colordiff
+opts.cdiff = -uprN
+cmd.kdiff3 =
+
