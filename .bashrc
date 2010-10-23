@@ -14,7 +14,7 @@ umask	0002
 
 # environment
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/code/bin
+export PATH=$PATH:$HOME/scripts
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
