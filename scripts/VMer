@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export VBOX_HWVIRTEX_IGNORE_SVM_IN_USE=true
+
+VBoxManage startvm $1
+

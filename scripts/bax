@@ -1,0 +1,4 @@
+#!/bin/sh
+
+pax -rwv -pe -tk */ $1
+

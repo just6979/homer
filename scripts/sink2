@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rsync -vaSEAX --partial --progress -s --stats /home/justin /media/cabinet.$1
+
