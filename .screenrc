@@ -21,6 +21,7 @@ termcapinfo xterm* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
 # show hardstatus on the last line if the terminal doesn't have a status line
 hardstatus lastline
+#hardstatus alwayslastline
 
 # show hardstatus (# of windows, pwd) and  window list. will go to title bar in konsole
 hardstatus string "%{ck}%h %{wk}%?%-Lw%?%{bw}%n*%f%t%?(%u)%?%{wk}%?%+Lw%?"
