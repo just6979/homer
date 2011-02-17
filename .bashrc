@@ -3,9 +3,9 @@
 #echo -n 'Setting up... '
 
 #echo -n 'environment, '
-umask	0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
+umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:$HOME/scripts
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -18,8 +18,8 @@ shopt -s no_empty_cmd_completion
 shopt -s nullglob
 
 #echo -n 'prompt, '
-# 'user@host:cwd[err]$ '
-# export PS1='\u@\h:\w/[$?]\$ ';
+#'user@host:cwd[err]$ '
+#export PS1='\u@\h:\w/[$?]\$ ';
 export PS1='\[\e[0;34m\]\u@\h\[\e[m\]:\[\e[0;33m\]\w/\[\e[m\]\[\e[0;35m\][$?]\[\e[1;32m\]\$ \[\e[m\]\[\e[1;37m\]'
 if [[ $TERM == 'xterm' ]]; then
 	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[0;34m\]\u@\h\[\e[m\]:\[\e[0;33m\]\w/\[\e[m\]\[\e[0;35m\]($?)\[\e[1;32m\]\$ \[\e[m\]\[\e[0;37m\]'
@@ -30,7 +30,11 @@ if [[ $TERM == 'screen' ]]; then
 fi
 
 #echo -n 'shortcuts, '
-# be paranoid and prompt, unless forced with -f
+alias retail_chrome='google-chrome --user-data-dir=/home/justin/.config/retail-chrome'
+alias jsh='bash -l'
+alias sshjj='ssh justin@jester'
+alias sshjb='ssh justin@beachst.hopto.org'
+#be paranoid and prompt, unless forced with -f
 alias cp='cp -ip'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -47,6 +51,7 @@ alias s='screen -AU'
 alias sS='s -S'
 alias sls='s -ls'
 alias sr='s -r'
+alias srd='s -rd'
 alias sx='s -x'
 # make ls show colors and filetype symbols
 export LSCOLORS='Exfxcxdxbxegedabagacad'
@@ -60,31 +65,26 @@ alias ll='ls -l'
 alias lla='ll -a'
 alias lld='ll -d'
 
-# echo -n 'keychain, '
-#function kc_find() { eval `keychain --eval --quiet --quick`; }
-#function kc_load() { eval `keychain --eval --ignore-missing id_rsa id_dsa identity`; }
-#function kc_kill() { keychain --stop all; }
-#kc_find
-
 #echo && echo -n 'Package system... '
 if [[ -e /etc/debian_version ]]; then
 	#echo 'found Debian base, using apt.'
-	alias pkg='sudo aptitude'
 	alias service='sudo invoke-rc.d'
+	alias pkg='sudo aptitude'
+    alias pkginfo='pkg show'
 	alias pkgrefresh='pkg update'
 	alias pkgupdate='pkg safe-upgrade'
 	alias pkgupgrade='pkg full-upgrade'
 fi
 if [[ -e /etc/fedora-release ]]; then
 	#echo 'found Fedora base, using yum.'
-	alias pkg='sudo yum'
 	alias service='sudo service'
+	alias pkg='sudo yum'
+    alias pkginfo='pkg info'
 	alias pkgrefresh='pkg clean && pkg makecache'
 	alias pkgupdate='pkg update'
 	alias pkgupgrade='pkg upgrade'
 fi
+alias pkgfind='pkg search'
 alias pkgadd='pkg install'
 alias pkgrm='pkg remove'
-alias pkgfind='pkg search'
-alias pkginfo='pkg info'
 

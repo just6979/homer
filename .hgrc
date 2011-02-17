@@ -4,12 +4,18 @@ style = compact
 ignore = ~/.hgignore
 
 [extensions]
+churn =
 color =
 extdiff =
 fetch =
+graphlog =
+highlight =
 pager =
 progress =
 purge =
+zeroconf =
+hgext.bookmarks =
+hggit =
 
 [alias]
 st = status -mard
@@ -19,8 +25,13 @@ sa = status -mardciu
 last = log -p -r -1:-4
 
 [extdiff]
-cmd.vdiff = kompare
-cmd.cdiff = colordiff
-opts.cdiff = -uprN
-cmd.kdiff3 =
+cmd.meld =
 
+[web]
+cacerts = /etc/pki/tls/certs/ca-bundle.crt
+
+[tortoisehg]
+editor = gedit
+closeci = True
+statustab = 2
+postpull = update
