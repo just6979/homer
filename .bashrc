@@ -84,6 +84,7 @@ if [[ -e /etc/fedora-release ]]; then
 	alias pkgupdate='pkg update'
 	alias pkgupgrade='pkg upgrade'
 fi
+alias pkglist='pkg list'
 alias pkgfind='pkg search'
 alias pkgadd='pkg install'
 alias pkgrm='pkg remove'
