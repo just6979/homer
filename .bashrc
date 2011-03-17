@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/scripts
+export PATH=$PATH:$HOME/scripts:$HOME/Code/depot_tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -32,6 +32,7 @@ fi
 #echo -n 'shortcuts, '
 alias retail_chrome='google-chrome --user-data-dir=/home/justin/.config/retail-chrome'
 alias jsh='bash -l'
+alias sshadd='ssh-add'
 alias sshjj='ssh justin@jester'
 alias sshjb='ssh justin@beachst.hopto.org'
 #be paranoid and prompt, unless forced with -f

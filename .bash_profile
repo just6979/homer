@@ -4,7 +4,7 @@
 eval `ssh-agent -s`
 
 # load the ssh keys. ctrl-d or empty string cancels if you don't want them in memory for this session
-ssh-add
+#ssh-add
 
 # echo -n 'keychain, '
 #function kc_find() { eval `keychain --eval --quiet --quick`; }

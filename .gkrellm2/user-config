@@ -31,11 +31,11 @@ clock_cal cal_options 1
 clock_cal cal_format %a %e %b
 clock_cal clock_format %k:%M:%S
 cpu extra_info cpu 1
-cpu chart_config cpu 100 25 4 0 0 0 : 0 0 0 0 500 : 0 0 0 0 500 : 0 0 0 0 500
+cpu chart_config cpu 100 25 4 0 0 0 : 0 1 0 0 500 : 0 0 0 0 500 : 0 0 0 0 500
 cpu extra_info cpu0 1
-cpu chart_config cpu0 100 50 2 0 0 0 : 0 0 0 0 500 : 0 0 0 0 500 : 0 0 0 0 500
-cpu extra_info cpu1 0
-cpu chart_config cpu1 100 50 2 0 0 0 : 0 0 0 0 500 : 0 0 0 0 500 : 0 0 0 0 500
+cpu chart_config cpu0 100 50 2 0 0 0 : 0 1 0 0 500 : 0 0 0 0 500 : 0 0 0 0 500
+cpu extra_info cpu1 1
+cpu chart_config cpu1 100 50 2 0 0 0 : 0 1 0 0 500 : 0 0 0 0 500 : 0 0 0 0 500
 cpu enable 1
 cpu smp_mode 0
 cpu omit_nice_mode 0
@@ -53,28 +53,59 @@ proc launch
 proc tooltip_comment 
 proc sensor_mode 0
 proc text_format L$l P$p
-proc chart_config 30 100 0 0 0 0 : 0 0 0 0 500 : 0 0 1 0 500
+proc chart_config 25 100 0 0 0 0 : 0 0 0 0 500 : 0 0 1 0 500
 disk assign_method 2
 disk device Disk 0 0 0 0 1 0 0
 disk chart_config Disk 50 100000000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 disk device sda 0 0 11 1 1 -1 0
-disk chart_config sda 50 2000000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+disk chart_config sda 50 100000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 disk device sda1 0 0 11 0 1 1 0
 disk device sda2 0 0 11 0 1 2 0
 disk device sda3 0 0 11 0 1 3 0
 disk device sdb 0 0 11 1 1 -1 0
-disk chart_config sdb 50 50000000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+disk chart_config sdb 50 1000000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 disk device sdb1 0 0 11 0 1 1 0
 disk device sdb2 0 0 11 0 1 2 0
 disk device sdb3 0 0 11 0 1 3 0
 disk device sdb4 0 0 11 0 1 4 0
-disk device sdc 0 0 11 1 1 -1 0
+disk device sdc 0 0 11 0 1 -1 0
 disk chart_config sdc 50 10 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 disk device sdc1 0 0 11 0 1 1 0
+disk device sdc2 0 0 11 0 1 2 0
+disk device sdc3 0 0 11 0 1 3 0
+disk device sdc4 0 0 11 0 1 4 0
+disk device sdc5 0 0 11 0 1 5 0
+disk device sdc6 0 0 11 0 1 6 0
+disk device sdc7 0 0 11 0 1 7 0
+disk device sdc8 0 0 11 0 1 8 0
+disk device sdc9 0 0 11 0 1 9 0
+disk device sdc10 0 0 11 0 1 10 0
+disk device sdc11 0 0 11 0 1 11 0
+disk device sdc12 0 0 11 0 1 12 0
 disk device sdd 0 0 11 0 1 -1 0
-disk chart_config sdd 50 3000000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+disk chart_config sdd 50 10 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+disk device sdd1 0 0 11 0 1 1 0
+disk device sdd2 0 0 11 0 1 2 0
+disk device sdd3 0 0 11 0 1 3 0
+disk device sdd4 0 0 11 0 1 4 0
+disk device sdd5 0 0 11 0 1 5 0
+disk device sdd6 0 0 11 0 1 6 0
+disk device sdd7 0 0 11 0 1 7 0
+disk device sdd8 0 0 11 0 1 8 0
+disk device sdd9 0 0 11 0 1 9 0
+disk device sdd10 0 0 11 0 1 10 0
+disk device sdd11 0 0 11 0 1 11 0
+disk device sdd12 0 0 11 0 1 12 0
+disk device sde 0 0 11 0 1 -1 0
+disk chart_config sde 50 1500000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+disk device sde1 0 0 11 0 1 1 0
+disk device sdf 0 0 11 1 1 -1 0
+disk chart_config sdf 50 10 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+disk device sdf1 0 0 11 0 1 1 0
 disk device sr0 0 0 14 0 1 -1 0
 disk chart_config sr0 40 10 2 1 0 0 : 0 0 0 0 500 : 0 0 0 0 500
+disk device md0 0 0 15 0 1 -1 0
+disk chart_config md0 50 30000000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 disk device dm-0 0 0 41 0 1 -1 0
 disk chart_config dm-0 40 2000 0 1 0 0 : 0 0 0 0 500 : 0 0 0 0 500
 disk device dm-1 0 0 41 0 1 -1 0
@@ -85,7 +116,7 @@ inet update_interval all 1
 net enables br0 1 1 0
 net chart_config br0 50 3000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 net enables eth0 1 1 0
-net chart_config eth0 50 5000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
+net chart_config eth0 50 500000 2 1 0 0 : 0 1 0 0 500 : 0 0 0 0 500
 net enables lo 0 1 0
 net chart_config lo 40 10000 0 1 0 0 : 0 0 0 0 500 : 0 0 0 0 500
 net enables vboxnet0 0 1 0
