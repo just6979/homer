@@ -35,3 +35,4 @@ editor = gedit
 closeci = True
 statustab = 2
 postpull = update
+

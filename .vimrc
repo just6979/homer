@@ -42,8 +42,6 @@ filetype indent on
 
 set history=100
 
-set mouse=a
-
 " because my pinky is often slow to release shift :P
 map :Wq		:wq
 map :Wq!	:wq!
