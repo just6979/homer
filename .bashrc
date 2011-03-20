@@ -34,7 +34,8 @@ alias retail_chrome='google-chrome --user-data-dir=/home/justin/.config/retail-c
 alias jsh='bash -l'
 alias sshadd='ssh-add'
 alias sshjj='ssh justin@jester'
-alias sshjb='ssh justin@beachst.hopto.org'
+alias sshjh='ssh justin@jester.hopto.org'
+alias sshaws='ssh -i ~/.ssh/junglekeys.pem root@aws-f14.hopto.org'
 #be paranoid and prompt, unless forced with -f
 alias cp='cp -ip'
 alias mv='mv -i'
