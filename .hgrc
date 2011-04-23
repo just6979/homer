@@ -14,8 +14,7 @@ pager =
 progress =
 purge =
 zeroconf =
-hgext.bookmarks =
-hggit =
+bookmarks =
 
 [alias]
 st = status -mard

@@ -30,7 +30,7 @@ if [[ $TERM == 'screen' ]]; then
 fi
 
 #echo -n 'shortcuts, '
-alias retail_chrome='google-chrome --user-data-dir=/home/justin/.config/retail-chrome'
+alias sambacycle='sudo service smb restart && sudo service nmb restart'
 alias jsh='bash -l'
 alias sshadd='ssh-add'
 alias sshjj='ssh justin@jester'
