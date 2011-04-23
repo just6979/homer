@@ -1,7 +1,0 @@
-/tmp
-/Downloads
-/DiskImages
-/Dropbox
-*Cache/**
-*VirtualBox/*/Snapshots/*
-
