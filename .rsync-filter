@@ -11,10 +11,26 @@
 + Games**
 + Music**
 + Video**
+
++ .bash_profile
++ .bashrc
++ .gvimrc
++ .hgrc
++ .htoprc
++ .inputrc
++ .profile
++ .psqlrc
++ .pythonrc
++ .rsync-filter
++ .screenrc
++ .toprc
++ .vimrc
+
 + Apps**
 + .blender**
 
-- Code**
++ Code**
+
 - DiskImages**
 - Downloads**
 - Dropbox**

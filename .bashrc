@@ -31,6 +31,7 @@ if [[ $TERM == 'screen' ]]; then
 fi
 
 #echo -n 'shortcuts, '
+alias rsync_backup='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s -F /home/justin/'
 alias sambacycle='sudo service smb restart && sudo service nmb restart'
 alias jsh='bash -l'
 alias sshadd='ssh-add'
