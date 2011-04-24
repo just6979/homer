@@ -10,7 +10,8 @@ export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
 export PYTHONSTARTUP=$HOME/.pythonrc
-export VIRTUALENV_USE_DISTRIBUTE='yes'
+export VIRTUALENV_USE_DISTRIBUTE=true
+export PIP_RESPECT_VIRTUALENV=true
 
 #echo -n 'bash, '
 shopt -s cmdhist
