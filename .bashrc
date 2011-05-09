@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/scripts:$HOME/Code/depot_tools
+export PATH=$PATH:$HOME/bin:$HOME/src/depot_tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'

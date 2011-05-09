@@ -1,16 +1,16 @@
-+ Personal**
++ personal**
 + Photos**
 + eBooks**
-+ scripts**
++ bin**
 + hg**
 + lmms**
-+ Blends**
-+ Attic**
-+ Pictures**
-+ Text**
-+ Games**
++ blends**
++ attic**
++ pictures**
++ text**
++ games**
 + Music**
-+ Video**
++ video**
 
 + .bash_profile
 + .bashrc
@@ -26,12 +26,12 @@
 + .toprc
 + .vimrc
 
-+ Apps**
++ apps**
 + .blender**
 
-+ Code**
++ code**
 
-- DiskImages**
+- diskImages**
 - Downloads**
 - Dropbox**
 - tmp**
