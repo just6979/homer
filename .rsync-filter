@@ -1,19 +1,15 @@
-+ personal**
-+ Photos**
-+ eBooks**
-+ bin**
+# personal stuff, things I made
++ Personal**
++ Media/Blends**
++ Media/Photos**
++ Media/Videos**
 + hg**
-+ lmms**
-+ blends**
-+ attic**
-+ pictures**
-+ text**
-+ games**
-+ Music**
-+ video**
++ scripts**
 
+# various useful settings
 + .bash_profile
 + .bashrc
++ .blender**
 + .gvimrc
 + .hgrc
 + .htoprc
@@ -26,16 +22,33 @@
 + .toprc
 + .vimrc
 
-+ apps**
-+ .blender**
+# things I bought
++ Games**
++ Media/Audiobooks**
++ Media/eBooks**
++ Media/iTunes**
++ Media/Movies**
++ Media/Music**
 
-+ code**
+# things I found
++ Media/Pictures**
++ Media/Text**
 
+# other stuff
++ Apps**
++ Attic**
++ Code**
++ Media**
++ src**
+
+# specific stuff to skip
 - diskImages**
 - Downloads**
 - Dropbox**
 - tmp**
+- mediarover**
 
+# skip everything else
 - *
 - .*
 

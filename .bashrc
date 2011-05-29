@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/bin:$HOME/src/depot_tools
+export PATH=$PATH:$HOME/Scripts:$HOME/local/bin:$HOME/local/src/depot_tools:/usr/local/google_appengine
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -91,6 +91,16 @@ if [[ -e /etc/fedora-release ]]; then
 fi
 alias pkglist='pkg list'
 alias pkgfind='pkg search'
+alias pkgsearch='pkg search'
+function pkgsearchless {
+    pkgsearch $1 | less;
+}
+function pkgsearchsort {
+    pkgsearch $1 | sort | less;
+}
+function pkgsearchall {
+    pkgsearch all $1 | less;
+}
 alias pkgadd='pkg install'
 alias pkgrm='pkg remove'
 
