@@ -38,7 +38,12 @@ alias jsh='bash -l'
 alias sshadd='ssh-add'
 alias sshjj='ssh justin@jester'
 alias sshjh='ssh justin@jester.hopto.org'
-alias sshaws='ssh -i ~/.ssh/junglekeys.pem root@aws-f14.hopto.org'
+function awsset {
+    export AWS=$1;
+}
+function awsgo {
+    ssh -X -i ~/.ssh/junglekeys.pem root@$AWS;
+}
 #be paranoid and prompt, unless forced with -f
 alias cp='cp -ip'
 alias mv='mv -i'
