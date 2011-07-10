@@ -30,7 +30,7 @@ set showcmd
 set showmode
 
 " turn on visual mouse
-set mouse=a
+"set mouse=a
 
 " set indent stuff to work with 4 spaces per tab
 set shiftwidth=4
