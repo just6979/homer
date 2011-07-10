@@ -2,6 +2,7 @@
 username = Justin White <just6979@gmail.com>
 style = compact
 ignore = ~/.hgignore
+merge = meld
 
 [extensions]
 churn =
@@ -30,8 +31,11 @@ cmd.meld =
 cacerts = /etc/pki/tls/certs/ca-bundle.crt
 
 [tortoisehg]
-editor = gedit
+editor = gvim
 closeci = True
 statustab = 2
 postpull = update
-
+promoteditems = commit, log, synch
+vdiff = meld
+shell = gnome-terminal
+tabwidth = 4

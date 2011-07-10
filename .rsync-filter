@@ -4,7 +4,9 @@
 + Media/Photos**
 + Media/Videos**
 + hg**
-+ scripts**
++ bin**
++ Scripts**
++ Code**
 
 # various useful settings
 + .bash_profile
@@ -18,6 +20,7 @@
 + .psqlrc
 + .pythonrc
 + .rsync-filter
++ .rsync-prsnl-filter
 + .screenrc
 + .toprc
 + .vimrc
@@ -29,6 +32,7 @@
 + Media/iTunes**
 + Media/Movies**
 + Media/Music**
++ Media/Podcasts**
 
 # things I found
 + Media/Pictures**
@@ -37,9 +41,12 @@
 # other stuff
 + Apps**
 + Attic**
-+ Code**
 + Media**
+
+# things other people made that i use
++ lib**
 + src**
+
 
 # specific stuff to skip
 - diskImages**
@@ -48,7 +55,7 @@
 - tmp**
 - mediarover**
 
-# skip everything else
+# finally, skip everything else
 - *
 - .*
 

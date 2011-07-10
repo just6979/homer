@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/Code/Scripts:$HOME/local/bin:$HOME/local/src/depot_tools:/usr/local/google_appengine
+export PATH=$PATH:$HOME/Scripts:$HOME/Apps:$HOME/bin:/usr/local/google_appengine:$HOME/src/depot_tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -33,6 +33,7 @@ fi
 
 #echo -n 'shortcuts, '
 alias rsync_backup='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s -F /home/justin/'
+alias rsync_personal='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s --filter="dir-merge .rsync-prsnl-filter" /home/justin/'
 alias sambacycle='sudo service smb restart && sudo service nmb restart'
 alias jsh='bash -l'
 alias sshadd='ssh-add'
@@ -42,7 +43,11 @@ function awsset {
     export AWS=$1;
 }
 function awsgo {
-    ssh -X -i ~/.ssh/junglekeys.pem root@$AWS;
+    ssh -X -i ~/.ssh/junglekeys.pem ec2-user@$AWS;
+}
+function awsrun {
+    awsset $1;
+    awsgo;
 }
 #be paranoid and prompt, unless forced with -f
 alias cp='cp -ip'
@@ -95,7 +100,6 @@ if [[ -e /etc/fedora-release ]]; then
 	alias pkgupgrade='pkg upgrade'
 fi
 alias pkglist='pkg list'
-alias pkgfind='pkg search'
 alias pkgsearch='pkg search'
 function pkgsearchless {
     pkgsearch $1 | less;
