@@ -1,0 +1,4 @@
+syntax: glob
+.*history
+.viminfo
+.ssh*
