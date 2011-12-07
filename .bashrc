@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/Scripts:$HOME/Apps:$HOME/bin:/usr/local/google_appengine:$HOME/src/depot_tools
+export PATH=$PATH:$HOME/Scripts:$HOME/Apps:$HOME/bin:/usr/local/google_appengine:$HOME/src/depot_tools:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -14,10 +14,10 @@ export VIRTUALENV_USE_DISTRIBUTE=true
 export PIP_RESPECT_VIRTUALENV=true
 
 #echo -n 'bash, '
-shopt -s cmdhist
-shopt -s histappend
-shopt -s no_empty_cmd_completion
-shopt -s nullglob
+#shopt -s cmdhist
+#shopt -s histappend
+#shopt -s no_empty_cmd_completion
+#shopt -s nullglob
 
 #echo -n 'prompt, '
 #'user@host:cwd[err]$ '
@@ -83,7 +83,7 @@ alias lld='ll -d'
 #echo && echo -n 'Package system... '
 if [[ -e /etc/debian_version ]]; then
 	#echo 'found Debian base, using apt.'
-	alias service='sudo invoke-rc.d'
+	alias service='sudo service'
 	alias pkg='sudo aptitude'
     alias pkginfo='pkg show'
 	alias pkgrefresh='pkg update'
