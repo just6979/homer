@@ -14,10 +14,10 @@ export VIRTUALENV_USE_DISTRIBUTE=true
 export PIP_RESPECT_VIRTUALENV=true
 
 #echo -n 'bash, '
-#shopt -s cmdhist
-#shopt -s histappend
-#shopt -s no_empty_cmd_completion
-#shopt -s nullglob
+shopt -s cmdhist
+shopt -s histappend
+shopt -s no_empty_cmd_completion
+shopt -s nullglob
 
 #echo -n 'prompt, '
 #'user@host:cwd[err]$ '
@@ -84,23 +84,29 @@ alias lld='ll -d'
 if [[ -e /etc/debian_version ]]; then
 	#echo 'found Debian base, using apt.'
 	alias service='sudo service'
-	alias pkg='sudo aptitude'
-    alias pkginfo='pkg show'
+	alias pkg='sudo apt-get'
+    alias pkginfo='apt-cache show'
+    alias pkglist='apt-cache list'
+    alias pkgsearch='apt-cache pkgnames'
 	alias pkgrefresh='pkg update'
-	alias pkgupdate='pkg safe-upgrade'
-	alias pkgupgrade='pkg full-upgrade'
+	alias pkgupdate='pkg upgrade'
+	alias pkgupgrade='pkg dist-upgrade'
+    alias pkgclean='pkg clean'
+    alias pkgsource='pkg source'
 fi
 if [[ -e /etc/fedora-release ]]; then
 	#echo 'found Fedora base, using yum.'
 	alias service='sudo service'
 	alias pkg='sudo yum'
     alias pkginfo='pkg info'
+    alias pkglist='pkg list'
+    alias pkgsearch='pkg search'
 	alias pkgrefresh='pkg clean && pkg makecache'
 	alias pkgupdate='pkg update'
 	alias pkgupgrade='pkg upgrade'
+    alias pkgclean='pkg clean'
+    alias pkgsource='pkg source'
 fi
-alias pkglist='pkg list'
-alias pkgsearch='pkg search'
 function pkgsearchless {
     pkgsearch $1 | less;
 }
