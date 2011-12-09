@@ -28,7 +28,10 @@ last = log -p -r -1:-4
 cmd.meld =
 
 [web]
-cacerts = /etc/pki/tls/certs/ca-bundle.crt
+#debian
+cacerts = /etc/ssl/certs/ca-certificates.crt
+#fedora
+#cacerts = /etc/pki/tls/certs/ca-bundle.crt
 
 [tortoisehg]
 editor = gvim
