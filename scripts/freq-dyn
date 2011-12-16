@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sudo cpufreq-selector -c 0 -g ondemand
-sudo cpufreq-selector -c 1 -g ondemand
-

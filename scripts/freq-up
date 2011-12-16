@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sudo cpufreq-selector -c 0 -g performance
-sudo cpufreq-selector -c 1 -g performance
-
