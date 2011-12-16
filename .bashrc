@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/Scripts:$HOME/Apps:$HOME/bin:/usr/local/google_appengine:$HOME/src/depot_tools:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools
+export PATH=$PATH:$HOME/scripts:$HOME/Apps:$HOME/bin:/usr/local/google_appengine:$HOME/src/depot_tools:$HOME/android/sdk/tools:$HOME/android/sdk/platform-tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
