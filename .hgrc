@@ -14,8 +14,6 @@ highlight =
 pager =
 progress =
 purge =
-zeroconf =
-bookmarks =
 
 [alias]
 st = status -mard
@@ -42,3 +40,4 @@ promoteditems = commit, log, synch
 vdiff = meld
 shell = gnome-terminal
 tabwidth = 4
+
