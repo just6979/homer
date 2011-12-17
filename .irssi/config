@@ -98,7 +98,7 @@ chatnets = {
   };
   SILC = { type = "SILC"; };
   Ubuntu = { type = "IRC"; };
-  freenode = { type = "IRC"; autosendcmd = "/id SaraN; wait 2000"; };
+  freenode = { type = "IRC"; };
 };
 
 channels = (
