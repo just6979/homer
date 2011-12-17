@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/env perl -w
 
 # usage: renamer.pl [-r] "orig_text" "replace_text"
 # in the directory you want to change, use -r for recursion

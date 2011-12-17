@@ -1,4 +1,4 @@
-#/usr/local/bin/bash
+#!/usr/bin/env bash
 
 cd /usr/ports/$1
 echo making port in `pwd`
