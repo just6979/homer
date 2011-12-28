@@ -70,10 +70,14 @@ alias srd='s -rd'
 alias sx='s -x'
 # make ls show colors and filetype symbols
 export LSCOLORS='Exfxcxdxbxegedabagacad'
+if uname -a | egrep "Linux" &> /dev/null; then
+    alias ls='ls -Fh --color=auto';
+fi
 if uname -a | egrep "BSD" &> /dev/null; then
-	alias ls='ls -Fh -G';
-else
-	alias ls='ls -Fh --color=auto';
+    alias ls='ls -Fh -G';
+fi
+if uname -a | egrep "armv7" &> /dev/null; then
+    alias ls='busybox ls -Fh --color=auto';
 fi
 alias lsa='ls -a'
 alias ll='ls -l'
