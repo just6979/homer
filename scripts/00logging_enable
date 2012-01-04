@@ -1,0 +1,4 @@
+#!/system/bin/sh
+
+insmod /system/modules/logger.ko
+
