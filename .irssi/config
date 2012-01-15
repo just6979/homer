@@ -286,5 +286,6 @@ settings = {
     window_history = "yes";
     emphasis_multiword = "yes";
     windows_auto_renumber = "no";
+    autocreate_own_query = "no";
   };
 };
