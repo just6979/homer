@@ -106,7 +106,9 @@ channels = (
   { name = "#cyanogenmod"; chatnet = "freenode"; autojoin = "No"; },
   { name = "#xda-devs"; chatnet = "freenode"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; }
+  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
+  { name = "#android"; chatnet = "freenode"; },
+  { name = "#android-dev"; chatnet = "freenode"; }
 );
 
 aliases = {

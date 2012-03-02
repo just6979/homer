@@ -122,4 +122,5 @@ function pkgsearchall {
 }
 alias pkgadd='pkg install'
 alias pkgrm='pkg remove'
+alias pkgcheck='pkgrefresh && pkgupdate'
 
