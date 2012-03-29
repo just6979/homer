@@ -34,11 +34,9 @@ fi
 #echo -n 'shortcuts, '
 alias rsync_backup='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s -F /home/justin/'
 alias rsync_personal='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s --filter="dir-merge .rsync-prsnl-filter" /home/justin/'
-alias sambacycle='sudo service smb restart && sudo service nmb restart'
 alias jsh='bash -l'
-alias sshadd='ssh-add'
-alias sshjj='ssh justin@jester'
-alias sshjh='ssh justin@jester.hopto.org'
+alias ssh_jj='ssh justin@jester'
+alias ssh_h.jw.net='ssh justin@home.justinwhite.net'
 function awsset {
     export AWS=$1;
 }
@@ -93,8 +91,8 @@ if [[ -e /etc/debian_version ]]; then
     alias pkglist='pkg list'
     alias pkgsearch='pkg search'
 	alias pkgrefresh='pkg update'
-	alias pkgupdate='pkg safe-upgrade'
-	alias pkgupgrade='pkg full-upgrade'
+	alias pkgupdate='pkg safe-upgrade -V'
+	alias pkgupgrade='pkg full-upgrade -V'
     alias pkgclean='pkg clean'
     alias pkgsource='pkg source'
 fi
@@ -123,4 +121,25 @@ function pkgsearchall {
 alias pkgadd='pkg install'
 alias pkgrm='pkg remove'
 alias pkgcheck='pkgrefresh && pkgupdate'
+
+# CM & AOSP shortcuts
+function fresh_bacon {
+    OWD=`pwd`;
+    cd ~/android/$1;
+    repo sync;
+    . build/envsetup.sh;
+    if [ -e otpc4gs/build.prop]; then
+        rm otpc4gs/build.prop;
+    fi
+    export CM_SNAPSHOT=1;
+    time brunch crespo4g;
+    cd $OWD;
+}
+
+export CM9_ROOT='/home/justin/android/CM9'
+alias cm_find='cd $CM9_ROOT'
+alias cm_sync='alias repo sync'
+alias cm_env_setup='cd $CM9_ROOT; source build/envsetup.sh'
+alias cm_snapshot='export CM_SNAPSHOT=1'
+alias cm_build='rm -f otpc4gs/build.prop; time brunch crespo4g'
 
