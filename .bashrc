@@ -122,24 +122,22 @@ alias pkgadd='pkg install'
 alias pkgrm='pkg remove'
 alias pkgcheck='pkgrefresh && pkgupdate'
 
-# CM & AOSP shortcuts
-function fresh_bacon {
-    OWD=`pwd`;
-    cd ~/android/$1;
-    repo sync;
-    . build/envsetup.sh;
-    if [ -e otpc4gs/build.prop]; then
-        rm otpc4gs/build.prop;
-    fi
-    export CM_SNAPSHOT=1;
-    time brunch crespo4g;
-    cd $OWD;
-}
-
+## CM setup & build shortcuts
 export CM9_ROOT='/home/justin/android/CM9'
 alias cm_find='cd $CM9_ROOT'
-alias cm_sync='alias repo sync'
-alias cm_env_setup='cd $CM9_ROOT; source build/envsetup.sh'
-alias cm_snapshot='export CM_SNAPSHOT=1'
-alias cm_build='rm -f otpc4gs/build.prop; time brunch crespo4g'
+alias cm_sync='echo "Running \"repo sync\"."; repo sync'
+alias cm_envsetup='echo "Finding CM."; cd $CM9_ROOT; echo "Running envsetup."; source build/envsetup.sh'
+alias cm_snapshot='echo "Setting CM_SNAPSHOT."; export CM_SNAPSHOT=1'
+alias cm_build='echo "Removing build.prop."; rm -f otpc4gs/build.prop; echo "Building for crespo4g."; time brunch crespo4g'
+
+# CM fresh build shortcut
+function fresh_bacon {
+    OWD=`pwd`;
+    cm_find;
+    cm_sync;
+    cm_envsetup;
+    cm_snapshot;
+    cm_build;
+    cd $OWD;
+}
 
