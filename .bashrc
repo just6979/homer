@@ -124,11 +124,11 @@ alias pkgcheck='pkgrefresh && pkgupdate'
 
 ## CM setup & build shortcuts
 export CM9_ROOT='/home/justin/android/CM9'
-alias cm_find='cd $CM9_ROOT'
+alias cm_find='echo "Changing to $CM9_ROOT"; cd $CM9_ROOT'
 alias cm_sync='echo "Running \"repo sync\"."; repo sync'
-alias cm_envsetup='echo "Finding CM."; cd $CM9_ROOT; echo "Running envsetup."; source build/envsetup.sh'
+alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
 alias cm_snapshot='echo "Setting CM_SNAPSHOT."; export CM_SNAPSHOT=1'
-alias cm_build='echo "Removing build.prop."; rm -f otpc4gs/build.prop; echo "Building for crespo4g."; time brunch crespo4g'
+alias cm_build='echo "Removing build.prop."; rm -f otp-crespo4g/system/build.prop; echo "Building for crespo4g."; time brunch crespo4g'
 
 # CM fresh build shortcut
 function fresh_bacon {
@@ -138,6 +138,7 @@ function fresh_bacon {
     cm_envsetup;
     cm_snapshot;
     cm_build;
+    echo "Fresh bacon here!: $CM9_ROOT/otp-crespo4g/"
     cd $OWD;
 }
 
