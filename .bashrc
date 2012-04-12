@@ -124,11 +124,11 @@ alias pkgcheck='pkgrefresh && pkgupdate'
 
 ## CM setup & build shortcuts
 export CM9_ROOT='/home/justin/android/CM9'
-alias cm_find='echo "Changing to $CM9_ROOT"; cd $CM9_ROOT'
-alias cm_sync='echo "Running \"repo sync\"."; repo sync'
-alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
-alias cm_snapshot='echo "Setting CM_SNAPSHOT."; export CM_SNAPSHOT=1'
-alias cm_build='echo "Removing build.prop."; rm -f otp-crespo4g/system/build.prop; echo "Building for crespo4g."; time brunch crespo4g'
+alias cm_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; cd $CM9_ROOT; fi'
+alias cm_sync='cm_find; echo "Running \"repo sync\"."; repo sync'
+alias cm_envsetup='cm_find; echo "Running envsetup."; source build/envsetup.sh'
+alias cm_snapshot='cm_find; echo "Setting CM_SNAPSHOT."; export CM_SNAPSHOT=1'
+alias cm_build='cm_find; echo "Removing build.prop."; rm -f otp-crespo4g/system/build.prop; echo "Building for crespo4g."; time brunch crespo4g'
 
 # CM fresh build shortcut
 function fresh_bacon {
