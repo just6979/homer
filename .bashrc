@@ -143,26 +143,31 @@ function fresh_bacon {
 }
 
 # ARM cross compiling toolchain setups
-function cross-arm-aosp {
+function cross-aosp-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-linux-androideabi-
     export PATH=$PATH:~/android/AOSP/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin/
 }
 
-function cross-arm-cm {
+function cross-cm9-arm-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
     export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin
 }
 
-function cross-arm-linaro {
+function cross-linaro-arm-linux-gnueabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-linux-gnueabi-
 }
 
-function cross-arm-sourcery {
+function cross-sourcery-arm-none-linux-gnueabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-none-linux-gnueabi-
-    export PATH=$PATH:~/Apps/arm-2011.03/bin/
+    export PATH=$PATH:~/apps/sourcery-2011.09/bin/
 }
 
+function cross-sourcery-arm-none-eabi {
+    export ARCH=arm
+    export CROSS_COMPILE=arm-none-eabi-
+    export PATH=$PATH:~/apps/sourcery-2011.09/bin/
+}
