@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/scripts:$HOME/Apps:$HOME/bin:$HOME/src/depot_tools:$HOME/android/sdk/tools:$HOME/android/sdk/platform-tools
+export PATH=$PATH:$HOME/scripts:$HOME/apps:$HOME/bin:$HOME/src/depot_tools:$HOME/android/sdk/tools:$HOME/android/sdk/platform-tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -152,12 +152,13 @@ function cross-aosp-arm-linux-androideabi {
 function cross-cm9-arm-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin
+    export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
 }
 
-function cross-linaro-arm-linux-gnueabi {
+function cross-cm9-arm-linux-androideabi {
     export ARCH=arm
-    export CROSS_COMPILE=arm-linux-gnueabi-
+    export CROSS_COMPILE=arm-eabi-
+    export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
 }
 
 function cross-sourcery-arm-none-linux-gnueabi {
