@@ -155,21 +155,21 @@ function cross-cm9-arm-eabi {
     export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
 }
 
-function cross-cm9-arm-linux-androideabi {
+function cross-x-cm9-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
     export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
 }
 
-function cross-sourcery-arm-none-linux-gnueabi {
-    export ARCH=arm
-    export CROSS_COMPILE=arm-none-linux-gnueabi-
-    export PATH=$PATH:~/apps/sourcery-2011.09/bin/
-}
-
 function cross-sourcery-arm-none-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-none-eabi-
+    export PATH=$PATH:~/apps/sourcery-2011.09/bin/
+}
+
+function cross-x-sourcery-arm-none-linux-gnueabi {
+    export ARCH=arm
+    export CROSS_COMPILE=arm-none-linux-gnueabi-
     export PATH=$PATH:~/apps/sourcery-2011.09/bin/
 }
 
