@@ -172,3 +172,8 @@ function cross-sourcery-arm-none-eabi {
     export CROSS_COMPILE=arm-none-eabi-
     export PATH=$PATH:~/apps/sourcery-2011.09/bin/
 }
+
+alias agent_start='eval `ssh-agent`'
+alias agent_kill='eval `ssh-agent -k`'
+alias agent_load_dvcs='ssh-add ~/.ssh/dvcs-id_rsa'
+
