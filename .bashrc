@@ -176,7 +176,7 @@ function cross-sourcery-arm-none-eabi {
 function fill-skeleton {
     KERNEL=$1
     cp -i $KERNEL/arch/arm/boot/zImage skeletons/$KERNEL/kernel
-    cp -i $KERNEL/drivers/net/wireless/bcm4329/bcm4329.ko skeletons/$KERNEL/system/modules
+    cp -i $KERNEL/drivers/net/wireless/bcm4329/bcm4329.ko skeletons/$KERNEL/system/lib/modules
 }
 
 alias agent_start='eval `ssh-agent`'
