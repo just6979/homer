@@ -173,6 +173,12 @@ function cross-sourcery-arm-none-eabi {
     export PATH=$PATH:~/apps/sourcery-2011.09/bin/
 }
 
+function fill-skeleton {
+    KERNEL=$1
+    cp -i $KERNEL/arch/arm/boot/zImage skeletons/$KERNEL/kernel
+    cp -i $KERNEL/drivers/net/wireless/bcm4329/bcm4329.ko skeletons/$KERNEL/system/modules
+}
+
 alias agent_start='eval `ssh-agent`'
 alias agent_kill='eval `ssh-agent -k`'
 alias agent_load_dvcs='ssh-add ~/.ssh/dvcs-id_rsa'
