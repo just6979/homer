@@ -183,3 +183,6 @@ alias agent_start='eval `ssh-agent`'
 alias agent_kill='eval `ssh-agent -k`'
 alias agent_load_dvcs='ssh-add ~/.ssh/dvcs-id_rsa'
 
+export USE_CCACHE=1
+export CCACHE_DIR='/home/justin/tmp/ccache/'
+
