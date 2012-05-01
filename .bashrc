@@ -56,6 +56,7 @@ alias t='tail -n$LINES -f'
 alias cdc='cd && clear'
 alias rebash='source ~/.bashrc'
 alias psfind='ps aux | grep -i'
+alias jtop='htop -u justin'
 # quick sudos
 alias svim='sudo vim'
 alias sgvim='sudo gvim'
