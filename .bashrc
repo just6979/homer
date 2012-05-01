@@ -128,7 +128,8 @@ alias cm_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; c
 alias cm_sync='cm_find; echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='cm_find; echo "Running envsetup."; source build/envsetup.sh'
 alias cm_snapshot='cm_find; echo "Setting CM_SNAPSHOT."; export CM_SNAPSHOT=1'
-alias cm_build='cm_find; echo "Removing build.prop."; rm -f otp-crespo4g/system/build.prop; echo "Building for crespo4g."; time brunch crespo4g'
+alias cm_prop_clean='cm_find; echo "Removing build.prop."; rm -f otp-crespo4g/system/build.prop;'
+alias cm_build_snapshot='cm_find; cm_envsetup; cm_snapshot; cm_prop_clean; echo "Building CM9 snapshot for crespo4g."; time brunch crespo4g'
 
 # CM fresh build shortcut
 function fresh_bacon {
