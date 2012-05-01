@@ -128,18 +128,19 @@ export CM9_ROOT='/home/justin/android/CM9'
 alias cm_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; cd $CM9_ROOT; fi'
 alias cm_sync='cm_find; echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='cm_find; echo "Running envsetup."; source build/envsetup.sh'
-alias cm_snapshot='cm_find; echo "Setting CM_SNAPSHOT."; export CM_SNAPSHOT=1'
-alias cm_prop_clean='cm_find; echo "Removing build.prop."; rm -f otp-crespo4g/system/build.prop'
-alias cm_build_snapshot='cm_find; cm_envsetup; cm_snapshot; cm_prop_clean; echo "Building CM9 snapshot for crespo4g."; time brunch crespo4g'
+alias cm_set_snapshot='cm_find; echo "Setting up for SNAPSHOT build."; unset CM_NIGHTLY; unset CM_UNOFFICIAL; export CM_SNAPSHOT=1'
+alias cm_set_unofficial='cm_find; echo "Setting up for UNOFFICIAL build."; unset CM_NIGHTLY; unset CM_SNAPSHOT; export CM_UNOFFICIAL=1'
+alias cm_clear_build_prop='cm_find; echo "Clearing build.prop."; rm -f otp-crespo4g/system/build.prop'
+alias cm_snapshot='cm_find; cm_envsetup; cm_set_snapshot; cm_clear_build_prop; echo "Building CM9 for crespo4g."; time brunch crespo4g'
+alias cm_unofficial='cm_find; cm_envsetup; cm_set_unofficial; cm_clear_build_prop; echo "Building CM9 for crespo4g."; time brunch crespo4g'
+alias cm_build='cm_snapshot'
 
 # CM fresh build shortcut
 function fresh_bacon {
     OWD=`pwd`;
     cm_find;
     cm_sync;
-    cm_envsetup;
     cm_snapshot;
-    cm_build;
     echo "Fresh bacon here!: $CM9_ROOT/otp-crespo4g/"
     cd $OWD;
 }
