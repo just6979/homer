@@ -5,7 +5,7 @@
 #echo -n 'environment, '
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$PATH:$HOME/scripts:$HOME/apps:$HOME/bin:$HOME/src/depot_tools:$HOME/android/sdk/tools:$HOME/android/sdk/platform-tools
+export PATH=$PATH:$HOME/scripts:$HOME/Apps:$HOME/bin:$HOME/src/depot_tools:$HOME/Android/sdk/tools:$HOME/Android/sdk/platform-tools
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
@@ -124,7 +124,7 @@ alias pkgrm='pkg remove'
 alias pkgcheck='pkgrefresh && pkgupdate'
 
 ## CM setup & build shortcuts
-export CM9_ROOT='/home/justin/android/CM9'
+export CM9_ROOT='/home/justin/Android/CM9'
 alias cm_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; cd $CM9_ROOT; fi'
 alias cm_sync='cm_find; echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='cm_find; echo "Running envsetup."; source build/envsetup.sh'
@@ -149,31 +149,31 @@ function fresh_bacon {
 function cross-aosp-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-linux-androideabi-
-    export PATH=$PATH:~/android/AOSP/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin/
+    export PATH=$PATH:~/Android/AOSP/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin/
 }
 
 function cross-cm9-arm-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
+    export PATH=$PATH:~/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
 }
 
 function cross-x-cm9-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/android/CM9/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
+    export PATH=$PATH:~/Android/CM9/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
 }
 
 function cross-sourcery-arm-none-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-none-eabi-
-    export PATH=$PATH:~/apps/sourcery-2011.09/bin/
+    export PATH=$PATH:~/Apps/sourcery-2011.09/bin/
 }
 
 function cross-x-sourcery-arm-none-linux-gnueabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-none-linux-gnueabi-
-    export PATH=$PATH:~/apps/sourcery-2011.09/bin/
+    export PATH=$PATH:~/Apps/sourcery-2011.09/bin/
 }
 
 function fill-skeleton {
