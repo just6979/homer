@@ -128,20 +128,20 @@ export CM9_ROOT='/home/justin/Android/CM9'
 alias cm_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; cd $CM9_ROOT; fi'
 alias cm_sync='cm_find; echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='cm_find; echo "Running envsetup."; source build/envsetup.sh'
-alias cm_set_snapshot='cm_find; echo "Setting up for SNAPSHOT build."; unset CM_NIGHTLY; unset CM_UNOFFICIAL; export CM_SNAPSHOT=1'
-alias cm_set_unofficial='cm_find; echo "Setting up for UNOFFICIAL build."; unset CM_NIGHTLY; unset CM_SNAPSHOT; export CM_UNOFFICIAL=1'
+alias cm_set_experimental='cm_find; echo "Setting up for "Crispy" experimental build."; export CM_EXTRAVERSION="Crispy"; export CM_EXPERIMENTAL'
+alias cm_set_unofficial='cm_find; echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
 alias cm_clean='cm_find; echo "Cleaning build output."; make clobber'
 alias cm_clear_build_prop='cm_find; echo "Clearing build.prop."; rm -f otp-crespo4g/system/build.prop'
-alias cm_snapshot='cm_find; cm_envsetup; cm_set_snapshot; cm_clear_build_prop; echo "Building CM9 for crespo4g."; time brunch crespo4g'
-alias cm_unofficial='cm_find; cm_envsetup; cm_set_unofficial; cm_clear_build_prop; echo "Building CM9 for crespo4g."; time brunch crespo4g'
-alias cm_build='cm_snapshot'
+alias cm_experimental='cm_find; cm_envsetup; cm_set_experimental; cm_clear_build_prop; echo "Building CM9-EXPERIMENTAL-Crispy for crespo4g."; time brunch crespo4g'
+alias cm_unofficial='cm_find; cm_envsetup; cm_set_unofficial; cm_clear_build_prop; echo "Building CM9-UNOFFICIAL for crespo4g."; time brunch crespo4g'
+alias cm_build='cm_unofficial'
 
 # CM fresh build shortcut
 function fresh_bacon {
     OWD=`pwd`;
     cm_find;
     cm_sync;
-    cm_snapshot;
+    cm_unofficial;
     echo "Fresh bacon here!: $CM9_ROOT/otp-crespo4g/"
     cd $OWD;
 }
@@ -178,9 +178,13 @@ function cross-x-sourcery-arm-none-linux-gnueabi {
 }
 
 function fill-skeleton {
+    ROOT='/home/justin/Android/kernels'
     KERNEL=$1
-    cp -i $KERNEL/arch/arm/boot/zImage skeletons/$KERNEL/kernel
-    cp -i $KERNEL/drivers/net/wireless/bcm4329/bcm4329.ko skeletons/$KERNEL/system/lib/modules
+    K=$ROOT/$KERNEL
+    S=$ROOT/skeletons/$KERNEL
+    cp -i $K/arch/arm/boot/zImage $S/kernel
+    cp -i $K/drivers/net/wireless/bcm4329/bcm4329.ko $S/system/lib/modules
+    cp -i $K/drivers/scsi/scsi_wait_scan.ko $S/system/lib/modules
 }
 
 alias agent_start='eval `ssh-agent`'
