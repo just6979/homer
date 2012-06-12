@@ -180,8 +180,9 @@ function cross-x-sourcery-arm-none-linux-gnueabi {
 function fill-skeleton {
     ROOT='/home/justin/Android/kernels'
     KERNEL=$1
+    SKELETON=$2
     K=$ROOT/$KERNEL
-    S=$ROOT/skeletons/$KERNEL
+    S=$ROOT/$SKELETON
     cp -i $K/arch/arm/boot/zImage $S/kernel
     cp -i $K/drivers/net/wireless/bcm4329/bcm4329.ko $S/system/lib/modules
     cp -i $K/drivers/scsi/scsi_wait_scan.ko $S/system/lib/modules
