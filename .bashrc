@@ -132,9 +132,11 @@ alias cm_set_experimental='cm_find; echo "Setting up for "Crispy" experimental b
 alias cm_set_unofficial='cm_find; echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
 alias cm_clean='cm_find; echo "Cleaning build output."; make clobber'
 alias cm_clear_build_prop='cm_find; echo "Clearing build.prop."; rm -f otp-crespo4g/system/build.prop'
-alias cm_experimental='cm_find; cm_envsetup; cm_set_experimental; cm_clear_build_prop; echo "Building CM9-EXPERIMENTAL-Crispy for crespo4g."; time brunch crespo4g'
-alias cm_unofficial='cm_find; cm_envsetup; cm_set_unofficial; cm_clear_build_prop; echo "Building CM9-UNOFFICIAL for crespo4g."; time brunch crespo4g'
-alias cm_build='cm_unofficial'
+alias cm_experimental='cm_find; cm_envsetup; cm_set_experimental; echo "Building CM9-EXPERIMENTAL-Crispy for crespo4g."; time brunch crespo4g'
+alias cm_unofficial='cm_find; cm_envsetup; cm_set_unofficial; echo "Building CM9-UNOFFICIAL for crespo4g."; time brunch crespo4g'
+alias cm_rebuild='cm_unofficial'
+alias cm_build='cm_clear_build_prop; cm_unofficial'
+alias cm_extra_env='export TARGET_BOOTANIMATION_PRELOAD=true; export TARGET_BOOTANIMATION_TEXTURE_CACHE=true;'
 
 # CM fresh build shortcut
 function fresh_bacon {
