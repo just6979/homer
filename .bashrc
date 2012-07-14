@@ -125,28 +125,20 @@ alias pkgcheck='pkgrefresh && pkgupdate'
 
 ## CM setup & build shortcuts
 export CM9_ROOT='/home/justin/Android/CM9'
-alias cm_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; cd $CM9_ROOT; fi'
-alias cm_sync='cm_find; echo "Running \"repo sync\"."; repo sync'
-alias cm_envsetup='cm_find; echo "Running envsetup."; source build/envsetup.sh'
-alias cm_set_experimental='cm_find; echo "Setting up for "Crispy" experimental build."; export CM_EXTRAVERSION="Crispy"; export CM_EXPERIMENTAL'
-alias cm_set_unofficial='cm_find; echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
-alias cm_clean='cm_find; echo "Cleaning build output."; make clobber'
-alias cm_clear_build_prop='cm_find; echo "Clearing build.prop."; rm -f otp-crespo4g/system/build.prop'
-alias cm_experimental='cm_find; cm_envsetup; cm_set_experimental; echo "Building CM9-EXPERIMENTAL-Crispy for crespo4g."; time brunch crespo4g'
-alias cm_unofficial='cm_find; cm_envsetup; cm_set_unofficial; echo "Building CM9-UNOFFICIAL for crespo4g."; time brunch crespo4g'
+export CM10_ROOT='/home/justin/Android/CM10'
+alias cm9_find='if [ `pwd` != "$CM9_ROOT" ]; then echo "Changing to $CM9_ROOT"; cd $CM9_ROOT; fi'
+alias cm10_find='if [ `pwd` != "$CM10_ROOT" ]; then echo "Changing to $CM10_ROOT"; cd $CM9_ROOT; fi'
+alias cm_sync='echo "Running \"repo sync\"."; repo sync'
+alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
+alias cm_set_experimental='echo "Setting up for "Crispy" experimental build."; export CM_EXTRAVERSION="Crispy"; export CM_EXPERIMENTAL'
+alias cm_set_unofficial='echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
+alias cm_clean='echo "Cleaning build output."; make clobber'
+alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/crespo4g/system/build.prop'
+alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM9-EXPERIMENTAL-Crispy for crespo4g."; time brunch crespo4g'
+alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM9-UNOFFICIAL for crespo4g."; time brunch crespo4g'
 alias cm_rebuild='cm_unofficial'
 alias cm_build='cm_clear_build_prop; cm_unofficial'
 alias cm_extra_env='export TARGET_BOOTANIMATION_PRELOAD=true; export TARGET_BOOTANIMATION_TEXTURE_CACHE=true;'
-
-# CM fresh build shortcut
-function fresh_bacon {
-    OWD=`pwd`;
-    cm_find;
-    cm_sync;
-    cm_unofficial;
-    echo "Fresh bacon here!: $CM9_ROOT/otp-crespo4g/"
-    cd $OWD;
-}
 
 # ARM cross compiling toolchain setups
 function cross-aosp-arm-linux-androideabi {
