@@ -108,7 +108,8 @@ channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#android"; chatnet = "freenode"; },
-  { name = "#android-dev"; chatnet = "freenode"; }
+  { name = "#android-dev"; chatnet = "freenode"; },
+  { name = "#cyanogenmod-dev"; chatnet = "freenode"; }
 );
 
 aliases = {
