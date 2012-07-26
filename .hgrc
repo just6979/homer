@@ -7,14 +7,16 @@ merge = meld
 [extensions]
 churn =
 color =
+convert =
 extdiff =
 fetch =
 graphlog =
+hgsubversion = ~/Apps/hgsubversion/hgsubversion
 highlight =
 pager =
 progress =
 purge =
-hgsubversion = ~/Apps/hgsubversion/hgsubversion
+rebase =
 
 [alias]
 st = status -mard
