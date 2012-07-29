@@ -157,16 +157,16 @@ function cross-aosp-arm-linux-androideabi {
     export PATH=$PATH:~/Android/AOSP/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin/
 }
 
-function cross-cm9-arm-eabi {
+function cross-cm-arm-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/Android/CM9/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
+    export PATH=$PATH:~/Android/CM/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
 }
 
-function cross-x-cm9-arm-linux-androideabi {
+function cross-x-cm-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/Android/CM9/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
+    export PATH=$PATH:~/Android/CM/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
 }
 
 function cross-sourcery-arm-none-eabi {
