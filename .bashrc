@@ -89,6 +89,9 @@ if uname -a | egrep "BSD" &> /dev/null; then
 fi
 if uname -a | egrep "armv7" &> /dev/null; then
     alias ls='busybox ls -Fh --color=auto';
+    # also remove some -i prompting, busybox doesn't like them
+    unalias rm
+    unalias mv
 fi
 alias lsa='ls -a'
 alias ll='ls -l'
