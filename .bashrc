@@ -103,8 +103,9 @@ if [[ -e /etc/debian_version ]]; then
 	#echo 'found Debian base, using apt.'
 	alias service='sudo service'
 	alias pkg='sudo apt-get -V'
-	alias pkgcache='sudo apt-cache'
-	alias pkginfo='pkgcache showpkg'
+    alias saptitude='sudo aptitude'
+	alias pkgcache='apt-cache'
+	alias pkginfo='aptitude show'
 	alias pkglist='pkgcache pkgnames'
 	alias pkgsearch='pkgcache search'
 	alias pkgrefresh='pkg update'
@@ -126,10 +127,10 @@ if [[ -e /etc/fedora-release ]]; then
     alias pkgclean='pkg clean'
     alias pkgsource='pkg source'
 fi
-function pkgsearchless {
-    pkgsearch $1 | less;
+function pkgsort {
+    pkgsearch $1 | sort;
 }
-function pkgsearchsort {
+function pkgless {
     pkgsearch $1 | sort | less;
 }
 function pkgsearchall {
