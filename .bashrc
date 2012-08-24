@@ -141,7 +141,13 @@ alias pkgrm='pkg remove'
 alias pkgcheck='pkgrefresh && pkgupdate'
 
 ## CM setup & build shortcuts
-export CM_ROOT='/home/justin/Android/CM'
+export CM_VER=10
+export CM_BASE=/home/justin/Android/CM
+export CM_ROOT=$CM_BASE$CM_VER
+function cm_version {
+    export CM_VER=$1
+    export CM_ROOT=$CM_BASE$CM_VER
+}
 alias cm_find='if [ `pwd` != "$CM_ROOT" ]; then echo "Changing to $CM_ROOT"; cd $CM_ROOT; fi'
 alias cm_sync='echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
