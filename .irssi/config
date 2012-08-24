@@ -292,3 +292,7 @@ settings = {
     autocreate_own_query = "no";
   };
 };
+keyboard = (
+  { key = "meta-~"; id = "command"; data = "window last"; },
+  { key = "meta-`"; id = "command"; data = "window last"; }
+);

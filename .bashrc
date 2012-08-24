@@ -159,31 +159,31 @@ alias cm_extra_env='export TARGET_BOOTANIMATION_PRELOAD=true; export TARGET_BOOT
 function cross-aosp-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-linux-androideabi-
-    export PATH=$PATH:~/Android/AOSP/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin/
+    export PATH=~/Android/AOSP/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin/:$PATH
 }
 
 function cross-cm-arm-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/Android/CM/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
+    export PATH=~/Android/CM/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin:$PATH
 }
 
 function cross-x-cm-arm-linux-androideabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-eabi-
-    export PATH=$PATH:~/Android/CM/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin
+    export PATH=~/Android/CM/prebuilt/linux-x86/toolchain/arm-linux-androideabi-4.4.x/bin:$PATH
 }
 
 function cross-sourcery-arm-none-eabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-none-eabi-
-    export PATH=$PATH:~/Apps/sourcery-2011.09/bin/
+    export PATH=~/Apps/sourcery-2011.09/bin/:$PATH
 }
 
 function cross-x-sourcery-arm-none-linux-gnueabi {
     export ARCH=arm
     export CROSS_COMPILE=arm-none-linux-gnueabi-
-    export PATH=$PATH:~/Apps/sourcery-2011.09/bin/
+    export PATH=~/Apps/sourcery-2011.09/bin/:$PATH
 }
 
 function fill-skeleton {
