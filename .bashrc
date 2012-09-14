@@ -151,7 +151,7 @@ function cm_version {
 alias cm_find='if [ `pwd` != "$CM_ROOT" ]; then echo "Changing to $CM_ROOT"; cd $CM_ROOT; fi'
 alias cm_sync='echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
-alias cm_set_experimental='echo "Setting up for experimental build."; unset CM_UNOFFICIAL; export CM_EXTRAVERSION="crispy"; export CM_EXPERIMENTAL'
+alias cm_set_experimental='echo "Setting up for experimental build."; unset CM_UNOFFICIAL; export CM_EXTRAVERSION="crispy"; export CM_EXPERIMENTAL=1'
 alias cm_set_unofficial='echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
 alias cm_clean='echo "Cleaning build output."; make clobber'
 alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/crespo4g/system/build.prop'
