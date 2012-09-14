@@ -151,14 +151,14 @@ function cm_version {
 alias cm_find='if [ `pwd` != "$CM_ROOT" ]; then echo "Changing to $CM_ROOT"; cd $CM_ROOT; fi'
 alias cm_sync='echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
-alias cm_set_experimental='echo "Setting up for "Crispy" experimental build."; export CM_EXTRAVERSION="Crispy"; export CM_EXPERIMENTAL'
+alias cm_set_experimental='echo "Setting up for experimental build."; export CM_EXTRAVERSION="crispy"; export CM_EXPERIMENTAL'
 alias cm_set_unofficial='echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
 alias cm_clean='echo "Cleaning build output."; make clobber'
 alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/crespo4g/system/build.prop'
-alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM$CM_VER-EXPERIMENTAL-Crispy for crespo4g."; time brunch crespo4g'
-alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM$CM_VER-UNOFFICIAL for crespo4g."; time brunch crespo4g'
-alias cm_rebuild='cm_unofficial'
+alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_VER}-EXPERIMENTAL for crespo4g."; time brunch crespo4g'
+alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for crespo4g."; time brunch crespo4g'
 alias cm_build='cm_clear_build_prop; cm_unofficial'
+alias cm_science='cm_clear_build_prop; cm_experimental'
 alias cm_extra_env='export TARGET_BOOTANIMATION_PRELOAD=true; export TARGET_BOOTANIMATION_TEXTURE_CACHE=true;'
 
 # ARM cross compiling toolchain setups
