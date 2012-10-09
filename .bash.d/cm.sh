@@ -20,6 +20,7 @@ alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_V
 alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for crespo4g."; time brunch crespo4g'
 alias cm_build='cm_clear_build_prop; cm_unofficial'
 alias cm_science='cm_clear_build_prop; cm_experimental'
+alias cm_go='cm_find; cm_envsetup; screen -S CM'
 
 # ARM cross compiling toolchain setups
 function cross-aosp-arm-linux-androideabi {
