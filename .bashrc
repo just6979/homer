@@ -3,7 +3,7 @@
 function setup_homer {
 	HOMER=~/homer
 	OLDWD=`pwd`
-	cd ~/tmp
+	cd ~
 	for FILE in `/bin/ls -A -1 $HOMER`
 	do
 		if [ -e $FILE ]; then
