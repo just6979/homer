@@ -8,19 +8,22 @@ function cm_version {
     export CM_VER=$1
     export CM_ROOT=$CM_BASE$CM_VER
 }
-
 alias cm_find='if [ `pwd` != "$CM_ROOT" ]; then echo "Changing to $CM_ROOT"; cd $CM_ROOT; fi'
-alias cm_sync='echo "Running \"repo sync\"."; repo sync'
 alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
+alias cm_go='screen -S CM -c ~/.screenrc_cm'
+# repo maintainence
+alias cm_sync='echo "Running \"repo sync\"."; repo sync'
+alias cm_clean='echo "Cleaning build output."; make clobber'
+# build it fresh
+alias cm_cook='cm_clear_build_prop; cm_unofficial'
+alias cm_science='cm_clear_build_prop; cm_experimental'
+# build setup
 alias cm_set_experimental='echo "Setting up for experimental build."; unset CM_UNOFFICIAL; export CM_EXTRAVERSION="crispy"; export CM_EXPERIMENTAL=1'
 alias cm_set_unofficial='echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
-alias cm_clean='echo "Cleaning build output."; make clobber'
 alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/crespo4g/system/build.prop'
+# build it
 alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_VER}-EXPERIMENTAL for crespo4g."; time brunch crespo4g'
 alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for crespo4g."; time brunch crespo4g'
-alias cm_build='cm_clear_build_prop; cm_unofficial'
-alias cm_science='cm_clear_build_prop; cm_experimental'
-alias cm_go='screen -S CM -c ~/.screenrc_cm'
 
 # ARM cross compiling toolchain setups
 function cross-aosp-arm-linux-androideabi {
