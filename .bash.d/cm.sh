@@ -20,7 +20,7 @@ alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_V
 alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for crespo4g."; time brunch crespo4g'
 alias cm_build='cm_clear_build_prop; cm_unofficial'
 alias cm_science='cm_clear_build_prop; cm_experimental'
-alias cm_go='cm_find; cm_envsetup; screen -S CM'
+alias cm_go='screen -S CM -c ~/.screenrc_cm'
 
 # ARM cross compiling toolchain setups
 function cross-aosp-arm-linux-androideabi {
@@ -63,3 +63,9 @@ function fill-skeleton {
     cp -i $K/drivers/net/wireless/bcm4329/bcm4329.ko $S/system/lib/modules
     cp -i $K/drivers/scsi/scsi_wait_scan.ko $S/system/lib/modules
 }
+
+if [ $CM_SHELL ]; then
+    cm_find
+    cm_envsetup
+fi
+
