@@ -15,6 +15,8 @@ alias jtop='htop -u justin'
 # quick sudos
 alias svim='sudo vim'
 alias sgvim='sudo gvim'
+alias swpallon='sudo swapon -a'
+alias swpalloff='sudo swapoff -a'
 
 # screen shortcuts
 alias s='screen -AU'
