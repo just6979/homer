@@ -10,7 +10,7 @@ function cm_version {
 }
 alias cm_find='if [ `pwd` != "$CM_ROOT" ]; then echo "Changing to $CM_ROOT"; cd $CM_ROOT; fi'
 alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
-alias cm_go='screen -S CM -c ~/.screenrc_cm_shell'
+alias cm_go='export OWD=`pwd`; cm_find; export CM_SHELL=1; screen -AOU -S CM; unset CM_SHELL; cd $OWD; unset OWD'
 # repo maintainence
 alias cm_sync='echo "Running \"repo sync\"."; repo sync'
 alias cm_clean='echo "Cleaning build output."; make clobber'

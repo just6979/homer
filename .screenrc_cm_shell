@@ -1,3 +1,0 @@
-chdir $CM_ROOT
-setenv CM_SHELL 1
-source ~/.screenrc

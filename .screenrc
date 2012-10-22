@@ -19,6 +19,9 @@ termcapinfo xterm* 'VR=\E[?5h:VN=\E[?5l'
 # special xterm hardstatus: use the window title (konsole doesn't need this)
 termcapinfo xterm* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
+# enable scrollback per window
+termcapinfo xterm* ti@:te@
+
 # show hardstatus on the last line if the terminal doesn't have a status line
 hardstatus lastline
 #hardstatus alwayslastline
