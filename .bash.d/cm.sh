@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 
 ## CM setup & build shortcuts
-export CM_VER=${CM_VER:='10.1'}
-export CM_DEV='d2spr'
-export CM_BASE='/home/justin/Android/CM'
+export CM_VER=${CM_VER:="10.1"}
+export CM_DEV="d2spr"
+export CM_BASE="/home/justin/Android/CM"
 export CM_ROOT=$CM_BASE$CM_VER
 function cm_version {
     export CM_VER=$1
     export CM_ROOT=$CM_BASE$CM_VER
 }
-alias cm_find='if [ `pwd` != "$CM_ROOT" ]; then echo "Changing to $CM_ROOT"; cd $CM_ROOT; fi'
-alias cm_envsetup='echo "Running envsetup."; source build/envsetup.sh'
-alias cm_go='export OWD=`pwd`; cm_find; export CM_SHELL=1; screen -AOU -S CM; unset CM_SHELL; cd $OWD; unset OWD'
+alias cm_find="if [ `pwd` != \"$CM_ROOT\" ]; then echo \"Changing to $CM_ROOT\"; cd $CM_ROOT; fi"
+alias cm_envsetup="echo \"Running envsetup.\"; source build/envsetup.sh"
+alias cm_go="export OWD=`pwd`; cm_find; export CM_SHELL=1; screen -AOU -S CM; unset CM_SHELL; cd $OWD; unset OWD"
 # repo maintainence
-alias cm_sync='echo "Running \"repo sync\"."; repo sync'
-alias cm_clean='echo "Cleaning build output."; make clobber'
+alias cm_sync="echo \"Synching repository.\"; repo sync"
+alias cm_clean="echo \"Cleaning build output.\"; make clobber"
 # build it fresh
-alias cm_cook='cm_clear_build_prop; cm_unofficial'
-alias cm_science='cm_clear_build_prop; cm_experimental'
+alias cm_cook="cm_clear_build_prop; cm_unofficial"
+alias cm_science="cm_clear_build_prop; cm_experimental"
 # build setup
-alias cm_set_experimental='echo "Setting up for experimental build."; unset CM_UNOFFICIAL; export CM_EXTRAVERSION="crispy"; export CM_EXPERIMENTAL=1'
-alias cm_set_unofficial='echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
-alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/${CM_DEV}/system/build.prop'
+alias cm_set_experimental="echo \"Setting up for experimental build.\"; unset CM_UNOFFICIAL; export CM_EXTRAVERSION=\"crispy\"; export CM_EXPERIMENTAL=1"
+alias cm_set_unofficial="echo \"Setting up for UNOFFICIAL build.\"; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1"
+alias cm_clear_build_prop="echo \"Clearing build.prop.\"; rm -f out/target/product/${CM_DEV}/system/build.prop"
 # build it
-alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_VER}-EXPERIMENTAL for ${CM_DEV}."; time brunch ${CM_DEV}'
-alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for ${CM_DEV}."; time brunch ${CM_DEV}'
+alias cm_experimental="cm_envsetup; cm_set_experimental; echo \"Building CM${CM_VER}-EXPERIMENTAL for ${CM_DEV}.\"; time brunch ${CM_DEV}"
+alias cm_unofficial="cm_envsetup; cm_set_unofficial; echo \"Building CM${CM_VER}-UNOFFICIAL for ${CM_DEV}.\"; time brunch ${CM_DEV}"
 
 # ARM cross compiling toolchain setups
 function cross-aosp-arm-linux-androideabi {
@@ -58,7 +58,7 @@ function cross-x-sourcery-arm-none-linux-gnueabi {
 }
 
 function fill-skeleton {
-    ROOT='/home/justin/Android/kernels'
+    ROOT="/home/justin/Android/kernels"
     KERNEL=$1
     SKELETON=$2
     K=$ROOT/$KERNEL
