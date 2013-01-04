@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 ## CM setup & build shortcuts
-export CM_VER=10
-export CM_BASE=/home/justin/Android/CM
+export CM_VER=${CM_VER:='10.1'}
+export CM_DEV='d2spr'
+export CM_BASE='/home/justin/Android/CM'
 export CM_ROOT=$CM_BASE$CM_VER
 function cm_version {
     export CM_VER=$1
@@ -20,10 +21,10 @@ alias cm_science='cm_clear_build_prop; cm_experimental'
 # build setup
 alias cm_set_experimental='echo "Setting up for experimental build."; unset CM_UNOFFICIAL; export CM_EXTRAVERSION="crispy"; export CM_EXPERIMENTAL=1'
 alias cm_set_unofficial='echo "Setting up for UNOFFICIAL build."; unset CM_EXTRAVERSION; unset CM_EXPERIMENTAL; export CM_UNOFFICIAL=1'
-alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/crespo4g/system/build.prop'
+alias cm_clear_build_prop='echo "Clearing build.prop."; rm -f out/target/product/${CM_DEV}/system/build.prop'
 # build it
-alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_VER}-EXPERIMENTAL for crespo4g."; time brunch crespo4g'
-alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for crespo4g."; time brunch crespo4g'
+alias cm_experimental='cm_envsetup; cm_set_experimental; echo "Building CM${CM_VER}-EXPERIMENTAL for ${CM_DEV}."; time brunch ${CM_DEV}'
+alias cm_unofficial='cm_envsetup; cm_set_unofficial; echo "Building CM${CM_VER}-UNOFFICIAL for ${CM_DEV}."; time brunch ${CM_DEV}'
 
 # ARM cross compiling toolchain setups
 function cross-aosp-arm-linux-androideabi {
