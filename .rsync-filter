@@ -1,16 +1,15 @@
 # personal stuff, things I made
-+ Personal**
++ Code**
++ Documents**
++ homer**
 + Media/Blends**
 + Media/Photos**
 + Media/Videos**
-+ hg**
-+ bin**
-+ Scripts**
-+ Code**
 
 # various useful settings
 + .bash_profile
 + .bashrc
++ .bash.d**
 + .blender**
 + .gvimrc
 + .hgrc
@@ -27,33 +26,28 @@
 
 # things I bought
 + Games**
-+ Media/Audiobooks**
-+ Media/eBooks**
-+ Media/iTunes**
++ Media/Books**
 + Media/Movies**
 + Media/Music**
-+ Media/Podcasts**
++ Media/TV\ Shows**
 
 # things I found
 + Media/Pictures**
 + Media/Text**
++ Emulation**
 
-# other stuff
+# apps & such
++ Android**
 + Apps**
 + Attic**
-+ Media**
++ Lang**
 
-# things other people made that i use
-+ lib**
-+ src**
-
+# VMs
++ DiskImages**
 
 # specific stuff to skip
-- diskImages**
 - Downloads**
 - Dropbox**
-- tmp**
-- mediarover**
 
 # finally, skip everything else
 - *
