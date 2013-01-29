@@ -30,9 +30,11 @@ cmd.meld =
 
 [web]
 #debian
-cacerts = /etc/ssl/certs/ca-certificates.crt
+#cacerts = /etc/ssl/certs/ca-certificates.crt
 #fedora
 #cacerts = /etc/pki/tls/certs/ca-bundle.crt
+#freebsd
+#cacerts = /usr/local/share/certs/ca-root-nss.crt
 
 [tortoisehg]
 editor = gvim
