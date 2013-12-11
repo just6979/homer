@@ -11,7 +11,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 export VIRTUALENV_USE_DISTRIBUTE=true
 export PIP_RESPECT_VIRTUALENV=true
 export USE_CCACHE=1
-export CCACHE_DIR='/home/justin/tmp/ccache/'
+export CCACHE_DIR='/temp/ccache/'
 
 
 #echo -n 'bash, '
