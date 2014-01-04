@@ -1,0 +1,48 @@
+[ui]
+username = Justin White <just6979@gmail.com>
+style = compact
+ignore = ~/.hgignore
+merge = meld
+
+[extensions]
+churn =
+color =
+convert =
+extdiff =
+fetch =
+graphlog =
+hgsubversion = ~/Apps/hgsubversion/hgsubversion
+highlight =
+pager =
+progress =
+purge =
+rebase =
+
+[alias]
+st = status -mard
+sc = status -mardc
+sa = status -mardciu
+# show last 4 changes
+last = log -p -r -1:-4
+
+[extdiff]
+cmd.meld =
+
+[web]
+#debian
+#cacerts = /etc/ssl/certs/ca-certificates.crt
+#fedora
+#cacerts = /etc/pki/tls/certs/ca-bundle.crt
+#freebsd
+#cacerts = /usr/local/share/certs/ca-root-nss.crt
+
+[tortoisehg]
+editor = gvim
+closeci = True
+statustab = 2
+postpull = update
+promoteditems = commit, log, synch
+vdiff = meld
+shell = gnome-terminal
+tabwidth = 4
+

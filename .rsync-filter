@@ -1,0 +1,55 @@
+# personal stuff, things I made
++ Code**
++ Documents**
++ homer**
++ Media/Blends**
++ Media/Photos**
++ Media/Videos**
+
+# various useful settings
++ .bash_profile
++ .bashrc
++ .bash.d**
++ .blender**
++ .gvimrc
++ .hgrc
++ .htoprc
++ .inputrc
++ .profile
++ .psqlrc
++ .pythonrc
++ .rsync-filter
++ .rsync-prsnl-filter
++ .screenrc
++ .toprc
++ .vimrc
+
+# things I bought
++ Games**
++ Media/Books**
++ Media/Movies**
++ Media/Music**
++ Media/TV\ Shows**
+
+# things I found
++ Media/Pictures**
++ Media/Text**
++ Emulation**
+
+# apps & such
++ Android**
++ Apps**
++ Attic**
++ Lang**
+
+# VMs
++ DiskImages**
+
+# specific stuff to skip
+- Downloads**
+- Dropbox**
+
+# finally, skip everything else
+- *
+- .*
+

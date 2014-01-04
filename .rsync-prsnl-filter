@@ -1,0 +1,38 @@
+# personal stuff, things I made
++ Personal**
++ Media/Blends**
++ Media/Photos**
++ Media/Videos**
++ hg**
++ Scripts**
++ bin**
++ Code**
+
+# various useful settings
++ .bash_profile
++ .bashrc
++ .blender**
++ .gvimrc
++ .hgrc
++ .htoprc
++ .inputrc
++ .profile
++ .psqlrc
++ .pythonrc
++ .rsync-filter
++ .rsync-prsnl-filter
++ .screenrc
++ .toprc
++ .vimrc
+
+# things I bought
++ Media/eBooks**
+
+# things I found
++ Media/Pictures**
++ Media/Text**
+
+# skip everything else
+- *
+- .*
+
