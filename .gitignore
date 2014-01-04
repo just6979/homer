@@ -1,3 +1,4 @@
-.hg/*
+.homer.git
+.ssh
+.cache
 .byobu/.*
-
