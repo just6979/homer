@@ -1,4 +1,4 @@
-Run the follow commands in your $HOME to get all the configs.
+Run the following commands in your $HOME to get all the configs:
 
 cd $HOME
 git clone --bare https://github.com/just6979/homer.git .homer.git
