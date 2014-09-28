@@ -25,10 +25,10 @@ if [[ -e /etc/fedora-release ]]; then
     alias pkgrm='pkg remove'
     alias pkglist='pkg list'
     alias pkgsearch='pkg search'
-	alias pkgrefresh='pkg clean && pkg makecache'
+	alias pkgrefresh='pkg makecache'
 	alias pkgupdate='pkg update'
 	alias pkgupgrade='pkg upgrade'
-    alias pkgclean='pkg clean'
+    alias pkgclean='pkg clean all'
     alias pkgsource='pkg source'
 fi
 function pkgsort {
