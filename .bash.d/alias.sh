@@ -28,3 +28,6 @@ alias sr='s -r'
 alias srd='s -rd'
 alias sx='s -x'
 
+## fix sudo disabling aliases
+alias sudo='sudo '
+
