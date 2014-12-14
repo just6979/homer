@@ -2,3 +2,6 @@
 .ssh
 .cache
 .byobu/.*
+/.VirtualBox
+/.bash_history
+/.config/git
