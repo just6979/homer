@@ -11,12 +11,13 @@ convert =
 extdiff =
 fetch =
 graphlog =
-hgsubversion = ~/Apps/hgsubversion/hgsubversion
+hgsubversion = 
 highlight =
 pager =
 progress =
 purge =
 rebase =
+hggit=
 
 [alias]
 st = status -mard
