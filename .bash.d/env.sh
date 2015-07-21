@@ -18,4 +18,4 @@ export CCACHE_DIR='/temp/ccache/'
 shopt -s cmdhist
 shopt -s histappend
 shopt -s no_empty_cmd_completion
-shopt -s nullglob
+#shopt -s nullglob
