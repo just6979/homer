@@ -9,7 +9,3 @@ ssh-add
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
-
-# go home, some environs don't put me there
-cd
-
