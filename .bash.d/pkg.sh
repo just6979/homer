@@ -20,8 +20,8 @@ if [[ -e /etc/debian_version ]]; then
 fi
 
 if [[ -e /etc/fedora-release ]]; then
-	#echo 'found Fedora base, using yum.'
-	alias pkg='yum'
+	#echo 'found Fedora base, using dnf.'
+	alias pkg='dnf'
     alias spkg='sudo pkg'
     alias pkginfo='pkg info'
     alias pkglist='pkg list'
