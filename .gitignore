@@ -1,7 +1,10 @@
-.homer.git
-.ssh
-.cache
+.homer.git/
+
+.bash_history
+
 .byobu/.*
-/.VirtualBox
-/.bash_history
-/.config/git
+.cache/
+.config/git
+.gem/
+.ssh/
+.VirtualBox/
