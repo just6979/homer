@@ -1,0 +1,1 @@
+mkshortcut.exe -output "Android Studio.lnk" -target "C:\Android\Studio\bin\studio.exe" -appid "Android Studio.-1608590678"
