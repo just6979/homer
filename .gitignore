@@ -8,3 +8,5 @@
 .gem/
 .ssh/
 .VirtualBox/
+/.gimp-2.8
+/.byobu
