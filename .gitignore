@@ -1,12 +1,19 @@
 .homer.git/
+.ssh/
+.gnupg/
+
+.byobu/
+.cache/
+.config/
+.gem/
+.VirtualBox/
+.gimp-2.8/
+.local/
+.mozilla/
 
 .bash_history
 
-.byobu/.*
-.cache/
-.config/git
-.gem/
-.ssh/
-.VirtualBox/
-/.gimp-2.8
-/.byobu
+.ICEauthority
+.esd_auth
+.viminfo
+
