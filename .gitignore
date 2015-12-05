@@ -17,3 +17,6 @@
 .esd_auth
 .viminfo
 
+/.mednafen
+/*.syncdb
+/mkshortcut/*.lnk
