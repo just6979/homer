@@ -4,7 +4,7 @@ import os, atexit, readline, rlcompleter
 
 #if raw_input("use identifier completion? y/[n]: ") == 'y':
 readline.parse_and_bind('tab: complete')
-print "identifier completion on"
+print("identifier completion on")
 
 historyPath = os.path.expanduser("~/.pyhistory")
 def save_history(historyPath=historyPath):
