@@ -1,7 +1,8 @@
 Run the following commands in your $HOME to get all the configs:
 
-cd $HOME
-git clone --bare https://github.com/just6979/homer.git .homer.git
-alias homegit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
-homegit checkout -f master
+(If you trust me [you shouldn't, but you can look at the file first]),
+Fetch this shell script
+https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh
+and save&run it or pipe it into your shell.
 
+Profit!
