@@ -1,4 +1,4 @@
-print "running startup script..."
+print("running startup script...")
 
 import os, atexit, readline, rlcompleter
 
@@ -16,3 +16,4 @@ if os.path.exists(historyPath):
 	readline.read_history_file(historyPath)
 
 del atexit, readline, rlcompleter
+
