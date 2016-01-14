@@ -1,8 +1,6 @@
-To "install":
+Fetch and run this shell script:
+Example command if you trust me (you shouldn't, but you can look at the file first):
 
-(If you trust me [you shouldn't, but you can look at the file first]),
-Fetch this shell script
-https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh
-and save&run it or pipe it into your shell.
+'wget -qO - https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh'
 
-Profit!
+Restart your terminal, or run 'source ~/.bashrc', to pull in new settings.
