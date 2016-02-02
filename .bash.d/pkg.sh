@@ -12,7 +12,7 @@ if [[ -e /etc/debian_version ]]; then
 	alias pkglist='pkg2 pkgnames'
 	alias pkgsearch='pkg2 search'
     alias pkgpurge='spkg purge'
-	alias pkgcheck='spkg update'
+	alias pkgrefresh='spkg update'
 	alias pkgupgrade='spkg -uV upgrade'
 	alias pkgupgrademore='spkg dist-upgrade -uV'
 	alias pkgclean='spkg autoremove; spkg autoclean; spkg clean; spkg purge ~c'
@@ -26,7 +26,7 @@ if [[ -e /etc/fedora-release ]]; then
     alias pkginfo='pkg info'
     alias pkglist='pkg list'
     alias pkgsearch='pkg search'
-	alias pkgupdate='spkg makecache'
+	alias pkgrefresh='spkg makecache'
 	alias pkgupgrade='spkg update'
 	alias pkgupgrademore='spkg upgrade'
     alias pkgclean='spkg clean all'
@@ -35,7 +35,7 @@ fi
 
 alias pkginstall='spkg install'
 alias pkgremove='spkg remove'
-alias pkgupdate='pkgcheck && pkgupgrade'
+alias pkgupdate='pkgrefresh && pkgupgrade'
 
 function pkgsort {
     pkgsearch $1 | sort;
