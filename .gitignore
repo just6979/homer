@@ -20,3 +20,7 @@
 /.mednafen
 /*.syncdb
 /mkshortcut/*.lnk
+/.android/uid.txt
+/.appcfg_nag
+/.appcfg_oauth2_tokens
+/_viminfo
