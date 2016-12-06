@@ -18,13 +18,178 @@ function setup_homer {
 	cd $OLDWD
 }
 
-source ~/.bash.d/env.sh
-source ~/.bash.d/prompt.sh
-source ~/.bash.d/alias.sh
-source ~/.bash.d/ls.sh
-source ~/.bash.d/shortcuts.sh
-source ~/.bash.d/pkg.sh
-source ~/.bash.d/cm.sh
+#echo -n 'environment, '
+umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
+export EMAIL='just6979@gmail.com'
+export PATH=$HOME/scripts:$HOME/Apps:$HOME/bin:$HOME/Apps/depot_tools:$HOME/Android/sdk/tools:$HOME/Android/sdk/platform-tools:$HOME/.gem/ruby/1.8/bin:$PATH
+export EDITOR='vim'
+export PAGER='less'
+export LESS='-FMRs~X -x4'
+export PYTHONSTARTUP=$HOME/.pythonrc
+export VIRTUALENV_USE_DISTRIBUTE=true
+export PIP_RESPECT_VIRTUALENV=true
+export USE_CCACHE=1
+export CCACHE_DIR='/temp/ccache/'
+
+
+#echo -n 'bash, '
+shopt -s cmdhist
+shopt -s histappend
+shopt -s no_empty_cmd_completion
+#shopt -s nullglob
+
+#echo -n 'prompt, '
+#'user@host:cwd[err]$ '
+#export PS1='\u@\h:\w/[$?]\$ ';
+export PS1='\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
+if [[ $TERM == 'xterm' ]]; then
+	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\]($?)\[\e[01;32m\]\$ \[\e[m\]'
+fi
+if [[ $TERM == 'screen' ]]; then
+	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
+	export PROMPT_COMMAND='echo -ne "\033k\033\\"'
+fi
+
+#echo -n 'aliases, '
+## be paranoid and prompt, unless forced with -f
+alias cp='cp -ip'
+alias mv='mv -i'
+alias rm='rm -i'
+
+## helpers
+alias t='tail -n$LINES -f'
+alias cdc='cd && clear'
+alias rebash='source ~/.bashrc'
+alias psfind='ps aux | grep -i'
+alias jtop='htop -u justin'
+# make the current shell (and its children) run IO at idle priority
+alias disknice='sudo ionice -c 3 -p $$'
+
+## quick sudos
+alias svim='sudo vim'
+alias sgvim='sudo gvim'
+alias swpon='sudo swapon -a'
+alias swpoff='sudo swapoff -a'
+
+## screen shortcuts
+alias s='screen -AOU'
+alias sS='s -S'
+alias sls='s -ls'
+alias sr='s -r'
+alias srd='s -rd'
+alias sx='s -x'
+
+## fix sudo disabling aliases
+alias sudo='sudo '
+
+#echo -n 'ls options, '
+# make ls show colors and filetype symbols
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+# Linux uses GNU ls
+if uname -a | egrep -i "linux" &> /dev/null; then
+    alias ls='ls -Fh --color=auto';
+fi
+# BSDs don't
+if uname -a | egrep -i "bsd" &> /dev/null; then
+    alias ls='ls -Fh -G';
+fi
+# Android uses Busybox
+if uname -a | egrep -i " armv7" &> /dev/null; then
+    alias ls='busybox ls -Fh --color=auto';
+    # also remove some -i prompting, busybox doesn't like them
+    unalias rm
+    unalias mv
+fi
+# raspberrypi also uses GNU ls
+if uname -a | egrep -i "armv6" &> /dev/null; then
+    alias ls='ls -Fh --color=auto';
+fi
+
+alias lsa='ls -a'
+alias ll='ls -l'
+alias lla='ll -a'
+alias lld='ll -d'
+
+#echo -n 'shortcuts, '
+alias rsync_backup='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s -F /home/justin/'
+alias rsync_personal='rsync -r -t -p -o -g -v --progress --delete -u -l -H -i -s --filter="dir-merge .rsync-prsnl-filter" /home/justin/'
+alias jsh='bash -l'
+alias ssh_jj='ssh justin@jester'
+alias ssh_h.jw.net='ssh justin@home.justinwhite.net'
+
+function awsset {
+    export AWS=$1;
+}
+function awsgo {
+    ssh -X -i ~/.ssh/junglekeys.pem ec2-user@$AWS;
+}
+function awsrun {
+    awsset $1;
+    awsgo;
+}
+
+#echo && echo -n 'Package system... '
+
+if [[ -e /etc/debian_version ]]; then
+	#echo 'found Debian base, using apt.'
+	alias pkg='apt-get'
+#	alias pkg='aptitude -V'
+    alias spkg='sudo pkg'
+	alias pkg2='apt-cache'
+	alias pkginfo='pkg2 show'
+	alias pkglist='pkg2 pkgnames'
+	alias pkgsearch='pkg2 search'
+    alias pkgpurge='spkg purge'
+	alias pkgrefresh='spkg update'
+	alias pkgupgrade='spkg -uV upgrade'
+	alias pkgupgrademore='spkg dist-upgrade -uV'
+	alias pkgclean='spkg autoremove; spkg autoclean; spkg clean; spkg purge ~c'
+	alias pkgsource='spkg source'
+fi
+
+if [[ -e /etc/fedora-release ]]; then
+	#echo 'found Fedora base, using dnf.'
+	alias pkg='dnf'
+    alias spkg='sudo pkg'
+    alias pkginfo='pkg info'
+    alias pkglist='pkg list'
+    alias pkgsearch='pkg search'
+	alias pkgrefresh='spkg makecache'
+	alias pkgupgrade='spkg update'
+	alias pkgupgrademore='spkg upgrade'
+    alias pkgclean='spkg clean all'
+    alias pkgsource='spkg source'
+fi
+
+alias pkginstall='spkg install'
+alias pkgremove='spkg remove'
+alias pkgupdate='pkgrefresh && pkgupgrade'
+
+function pkgsort {
+    pkgsearch $1 | sort;
+}
+function pkgless {
+    pkgsearch $1 | sort | less;
+}
+function pkgsearchall {
+    pkgsearch all $1 | less;
+}
+
+# compat
+alias pkgrm='pkgremove'
+alias pkgadd='pkginstall'
+
+#echo -n 'ssh-agent, '
+# reuse ssh-agent
+if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
+        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+    fi
+alias agent_find='export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock'
+#agent_find
+
+alias agent_start='eval `ssh-agent`'
+alias agent_kill='eval `ssh-agent -k`'
+alias agent_load_dvcs='ssh-add ~/.ssh/dvcs_id_dsa'
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
