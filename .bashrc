@@ -200,3 +200,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# VC specific aliases
+alias prod_meta='python get_scan_metadata.py -e lapis -p veracode-greenlight-prod -b 187309115203-sms-data-prod -i '
+
+alias prod_test_net="e2e_single_seg.py -e prod -v 3 -l net -f ~/Code/sms/sms-tests/data/net/test_net.zip -p prod -c searchonsearch.cs -d App_Code.dll -r"
+alias prod_test_java="e2e_single_seg.py -e prod -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -p prod -r "
+
+alias dev_test_java="e2e_single_seg.py -e dev -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -p dev -r "
+alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests/data/net/test_net.zip -p dev -c searchonsearch.cs -d App_Code.dll -r"
+
+alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
