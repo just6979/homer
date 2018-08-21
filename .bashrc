@@ -132,7 +132,7 @@ function awsrun {
 
 if [[ -e /etc/debian_version ]]; then
 	#echo 'found Debian base, using apt.'
-	alias pkg='apt-get'
+	alias pkg='apt'
 #	alias pkg='aptitude -V'
     alias spkg='sudo pkg'
 	alias pkg2='apt-cache'
@@ -143,7 +143,7 @@ if [[ -e /etc/debian_version ]]; then
 	alias pkgrefresh='spkg update'
 	alias pkgupgrade='spkg -uV upgrade'
 	alias pkgupgrademore='spkg dist-upgrade -uV'
-	alias pkgclean='spkg autoremove; spkg autoclean; spkg clean; spkg purge ~c'
+	alias pkgclean='spkg autoremove; spkg autoclean; spkg clean'
 	alias pkgsource='spkg source'
 fi
 
