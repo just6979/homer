@@ -161,6 +161,20 @@ if [[ -e /etc/fedora-release ]]; then
     alias pkgsource='spkg source'
 fi
 
+if [[ -e /etc/centos-release ]]; then
+	#echo 'found CentOS base, using yum.'
+	alias pkg='yum'
+    alias spkg='sudo pkg'
+    alias pkginfo='pkg info'
+    alias pkglist='pkg list'
+    alias pkgsearch='pkg search'
+	alias pkgrefresh='spkg makecache'
+	alias pkgupgrade='spkg update'
+	alias pkgupgrademore='spkg upgrade'
+    alias pkgclean='spkg clean all'
+    alias pkgsource='spkg source'
+fi
+
 alias pkginstall='spkg install'
 alias pkgremove='spkg remove'
 alias pkgupdate='pkgrefresh && pkgupgrade'
