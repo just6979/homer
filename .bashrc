@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # alias for using git within ~
-alias homegit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
+alias hgit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
 
 function setup_homer {
 	HOMER=~/homer
