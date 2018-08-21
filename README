@@ -1,6 +1,0 @@
-Fetch and run this shell script:
-Example command if you trust me (you shouldn't, but you can look at the file first):
-
-'wget -qO - https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh'
-
-Restart your terminal, or run 'source ~/.bashrc', to pull in new settings.
