@@ -72,12 +72,20 @@ alias swpon='sudo swapon -a'
 alias swpoff='sudo swapoff -a'
 
 ## screen shortcuts
-alias s='screen -AOU'
+alias s='screen -AOUdR'
 alias sS='s -S'
 alias sls='s -ls'
 alias sr='s -r'
 alias srd='s -rd'
 alias sx='s -x'
+
+## tmux shortcuts
+alias t='tmux'
+alias tS='tmux new -s'
+alias tls='tmux list-seesions'
+alias tr='tmux attach -t'
+alias trd='tmux --help'
+alias tx='tmux --help'
 
 ## fix sudo disabling aliases
 alias sudo='sudo '
