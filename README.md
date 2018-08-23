@@ -5,18 +5,11 @@ Example commands if you trust me (you shouldn't, but you can look at the file fi
 
 ## HTTPS
 
-`wget -qO - https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh`
-
-OR
-
-`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh`
+`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh https://github.com/just6979/homer.git`
 
 ## SSH
-`wget -qO - https://raw.githubusercontent.com/just6979/homer/master/homer_me_ssh.sh | sh`
 
-OR
-
-`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me_ssh.sh | sh`
+`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh git@github.com:just6979/homer.git`
 
 ## Finish
 

@@ -1,4 +1,4 @@
 cd $HOME
-git clone --bare https://github.com/just6979/homer.git .homer.git
+git clone --bare $1 .homer.git
 alias hgit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
 hgit checkout -f master
