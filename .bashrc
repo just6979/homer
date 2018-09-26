@@ -140,10 +140,14 @@ function awsrun {
 
 if [[ -e /etc/debian_version ]]; then
 	#echo 'found Debian base, using apt.'
-	alias pkg='apt'
-#	alias pkg='aptitude -V'
+    if [[ -e /usr/bin/aptitude ]]; then
+        alias pkg='aptitude -V'
+        alias pkg2='aptitude -V'
+    else
+        alias pkg='apt'
+        alias pkg2='apt-cache'
+    fi
     alias spkg='sudo pkg'
-	alias pkg2='apt-cache'
 	alias pkginfo='pkg2 show'
 	alias pkglist='pkg2 pkgnames'
 	alias pkgsearch='pkg2 search'
