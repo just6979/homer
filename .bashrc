@@ -143,9 +143,11 @@ if [[ -e /etc/debian_version ]]; then
     if [[ -e /usr/bin/aptitude ]]; then
         alias pkg='aptitude -V'
         alias pkg2='aptitude -V'
+        alias pkgclean='spkg autoclean; spkg clean; spkg purge ~c'
     else
         alias pkg='apt'
         alias pkg2='apt-cache'
+        alias pkgclean='spkg autoremove; spkg autoclean; spkg clean'
     fi
     alias spkg='sudo pkg'
 	alias pkginfo='pkg2 show'
@@ -155,7 +157,6 @@ if [[ -e /etc/debian_version ]]; then
 	alias pkgrefresh='spkg update'
 	alias pkgupgrade='spkg -uV upgrade'
 	alias pkgupgrademore='spkg dist-upgrade -uV'
-	alias pkgclean='spkg autoremove; spkg autoclean; spkg clean'
 	alias pkgsource='spkg source'
 fi
 
