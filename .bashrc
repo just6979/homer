@@ -155,8 +155,8 @@ if [[ -e /etc/debian_version ]]; then
 	alias pkgsearch='pkg2 search'
     alias pkgpurge='spkg purge'
 	alias pkgrefresh='spkg update'
-	alias pkgupgrade='spkg -uV upgrade'
-	alias pkgupgrademore='spkg dist-upgrade -uV'
+	alias pkgupgrade='spkg -V upgrade'
+	alias pkgupgrademore='spkg dist-upgrade -V'
 	alias pkgsource='spkg source'
 fi
 
