@@ -25,7 +25,6 @@ export PATH=$HOME/scripts:$HOME/Apps:$HOME/bin:$HOME/Apps/depot_tools:$HOME/Andr
 export EDITOR='vim'
 export PAGER='less'
 export LESS='-FMRs~X -x4'
-export PYTHONSTARTUP=$HOME/.pythonrc
 export VIRTUALENV_USE_DISTRIBUTE=true
 export PIP_RESPECT_VIRTUALENV=true
 export USE_CCACHE=1
