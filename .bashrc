@@ -240,4 +240,9 @@ alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/
 
 source ~/scripts/gitprompt/gitprompt.sh
 
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+if [[ -e /etc/centos-release ]]; then
+    source /usr/bin/virtualenvwrapper.sh
+else
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
