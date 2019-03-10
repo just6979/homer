@@ -3,13 +3,13 @@
 Fetch and run this shell script:
 Example commands if you trust me (you shouldn't, but you can look at the file first):
 
-## HTTPS
-
-`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh https://github.com/just6979/homer.git`
-
 ## SSH
 
-`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh | sh git@github.com:just6979/homer.git`
+`curl https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh  && sh homer_me.sh git@github.com:just6979/homer.git`
+
+## HTTPS
+
+`curl -O https://raw.githubusercontent.com/just6979/homer/master/homer_me.sh && sh homer_me.sh https://github.com/just6979/homer.git`
 
 ## Finish
 
