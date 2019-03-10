@@ -171,6 +171,7 @@ if [[ -e /etc/fedora-release ]]; then
 	alias pkgupgrademore='spkg upgrade'
     alias pkgclean='spkg clean all'
     alias pkgsource='spkg source'
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 fi
 
 if [[ -e /etc/centos-release ]]; then
