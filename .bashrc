@@ -81,8 +81,8 @@ alias sx='s -x'
 ## tmux shortcuts
 alias t='tmux'
 alias tS='tmux new -s'
-alias tls='tmux list-seesions'
-alias tr='tmux attach -t'
+alias tls='tmux list-sessions'
+alias tr='tmux attach-session'
 alias trd='tmux --help'
 alias tx='tmux --help'
 
