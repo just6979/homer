@@ -3,6 +3,7 @@ defmonitor on
 defobuflimit 8192
 defscrollback 8192
 startup_message off
+deflogin off
 
 vbell off
 msgwait 3
