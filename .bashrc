@@ -256,3 +256,8 @@ if [[ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
+# if $STY is not set...
+if [ -z "$STY" ]; then
+        exec screen -ARR
+fi
+
