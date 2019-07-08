@@ -261,7 +261,7 @@ if [[ -e /usr/bin/wslsys ]]; then
     sudo mkdir -pm 777 /run/screen
 fi
 
- if $STY is not set...
+# if $STY is not set...
 if [ -z "$STY" ]; then
     exec screen -ARR
 fi
