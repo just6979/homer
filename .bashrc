@@ -238,8 +238,7 @@ alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests
 
 alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
 
-
-source ~/scripts/gitprompt/gitprompt.sh
+#source ~/scripts/gitprompt/gitprompt.sh
 
 # centos
 if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
@@ -256,8 +255,14 @@ if [[ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
-# if $STY is not set...
+# WSL
+if [[ -e /usr/bin/wslsys ]]; then
+    echo "Found WSL, enabling screen"
+    sudo mkdir -pm 777 /run/screen
+fi
+
+ if $STY is not set...
 if [ -z "$STY" ]; then
-        exec screen -ARR
+    exec screen -ARR
 fi
 
