@@ -63,6 +63,7 @@ alias psfind='ps aux | grep -i'
 alias jtop='htop -u justin'
 # make the current shell (and its children) run IO at idle priority
 alias disknice='sudo ionice -c 3 -p $$'
+alias hist='history | grep'
 
 ## quick sudos
 alias svim='sudo vim'
