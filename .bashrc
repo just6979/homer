@@ -83,7 +83,7 @@ alias sx='s -x'
 alias t='tmux'
 alias tS='tmux new -s'
 alias tls='tmux list-sessions'
-alias tr='tmux attach-session'
+alias ta='tmux attach-session'
 alias trd='tmux --help'
 alias tx='tmux --help'
 
@@ -240,4 +240,6 @@ alias dev_test_java="e2e_single_seg.py -e dev -v 3 -l java -f ~/Code/sms/sms-tes
 alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests/data/net/test_net.zip -p dev -c searchonsearch.cs -d App_Code.dll -r"
 
 alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
+
+alias gitpropmpt="source ~/scripts/gitprompt/gitprompt.sh"
 
