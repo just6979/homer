@@ -72,7 +72,7 @@ alias swpon='sudo swapon -a'
 alias swpoff='sudo swapoff -a'
 
 ## screen shortcuts
-alias s='screen -AOUdR'
+alias s='screen -AOUR'
 alias sS='s -S'
 alias sls='s -ls'
 alias sr='s -r'

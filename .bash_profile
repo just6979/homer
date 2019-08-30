@@ -35,6 +35,6 @@ fi
 
 # if $STY is not set...
 if [ -z "$STY" ]; then
-    exec screen -ARR
+    screen -ARR
 fi
 
