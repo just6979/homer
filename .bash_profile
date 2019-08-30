@@ -5,6 +5,11 @@
 # load the ssh keys. ctrl-d or empty string cancels if you don't want them in memory for this session
 #ssh-add
 
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
 source /home/jwhite/scripts/gitprompt/gitprompt.sh
 
 # centos
@@ -31,10 +36,5 @@ fi
 # if $STY is not set...
 if [ -z "$STY" ]; then
     exec screen -ARR
-fi
-
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
 fi
 
