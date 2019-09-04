@@ -1,1 +1,0 @@
-mkshortcut.exe -output "New Shortcut.lnk" -target "C:\Program Files\Some App\app.exe" -appid "SomeID"

@@ -1,1 +1,0 @@
-mkshortcut.exe -output "IntelliJ IDEA.lnk" -target "C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 14.1.5\bin\idea.exe" -appid "IntelliJ IDEA.-1006097273"
