@@ -41,14 +41,14 @@ shopt -s no_empty_cmd_completion
 #echo -n 'prompt, '
 #'user@host:cwd[err]$ '
 #export PS1='\u@\h:\w/[$?]\$ ';
-#export PS1='\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
-#if [[ $TERM == 'xterm' ]]; then
-#	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\]($?)\[\e[01;32m\]\$ \[\e[m\]'
-#fi
-#if [[ $TERM == 'screen' ]]; then
-#	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
-#	export PROMPT_COMMAND='echo -ne "\033k\033\\"'
-#fi
+export PS1='\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
+if [[ $TERM == 'xterm' ]]; then
+	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\]($?)\[\e[01;32m\]\$ \[\e[m\]'
+fi
+if [[ $TERM == 'screen' ]]; then
+	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
+	export PROMPT_COMMAND='echo -ne "\033k\033\\"'
+fi
 
 #echo -n 'aliases, '
 ## be paranoid and prompt, unless forced with -f
@@ -241,5 +241,20 @@ alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests
 
 alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
 
-alias gitprompt="source ~/scripts/gitprompt/gitprompt.sh"
+# centos
+if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
+    source /usr/bin/virtualenvwrapper_lazy.sh
+fi
+
+# fedora
+if [[ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
+fi
+
+# ubuntu
+if [[ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
+alias gprompt="source ~/scripts/gitprompt/gitprompt.sh"
 
