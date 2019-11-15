@@ -10,8 +10,6 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-source /home/jwhite/scripts/gitprompt/gitprompt.sh
-
 # centos
 if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper.sh

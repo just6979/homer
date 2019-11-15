@@ -27,6 +27,7 @@ export PAGER='less'
 export LESS='-FMRs~X -x4'
 export VIRTUALENV_USE_DISTRIBUTE=true
 export PIP_RESPECT_VIRTUALENV=true
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export USE_CCACHE=1
 export CCACHE_DIR='/temp/ccache/'
 
@@ -40,14 +41,14 @@ shopt -s no_empty_cmd_completion
 #echo -n 'prompt, '
 #'user@host:cwd[err]$ '
 #export PS1='\u@\h:\w/[$?]\$ ';
-export PS1='\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
-if [[ $TERM == 'xterm' ]]; then
-	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\]($?)\[\e[01;32m\]\$ \[\e[m\]'
-fi
-if [[ $TERM == 'screen' ]]; then
-	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
-	export PROMPT_COMMAND='echo -ne "\033k\033\\"'
-fi
+#export PS1='\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
+#if [[ $TERM == 'xterm' ]]; then
+#	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\]($?)\[\e[01;32m\]\$ \[\e[m\]'
+#fi
+#if [[ $TERM == 'screen' ]]; then
+#	export PS1='\[\033]0;\u@\h:\w/[$?]\$\007\]\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
+#	export PROMPT_COMMAND='echo -ne "\033k\033\\"'
+#fi
 
 #echo -n 'aliases, '
 ## be paranoid and prompt, unless forced with -f
@@ -62,7 +63,7 @@ alias rebash='source ~/.bashrc'
 alias psfind='ps aux | grep -i'
 alias jtop='htop -u justin'
 # make the current shell (and its children) run IO at idle priority
-alias disknice='sudo ionice -c 3 -p $$'
+#alias disknice='sudo ionice -c 3 -p $$'
 alias hist='history | grep'
 
 ## quick sudos
@@ -211,15 +212,14 @@ alias pkgadd='pkginstall'
 
 #echo -n 'ssh-agent, '
 # reuse ssh-agent
-#if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
-#        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-#    fi
-#alias agent_find='export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock'
-#agent_find
+if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
+        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+    fi
+alias agent_find='export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock'
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 alias agent_start='eval `ssh-agent`'
 alias agent_kill='eval `ssh-agent -k`'
-alias agent_load_dvcs='ssh-add ~/.ssh/dvcs_id_dsa'
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then
@@ -241,5 +241,5 @@ alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests
 
 alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
 
-alias gitpropmpt="source ~/scripts/gitprompt/gitprompt.sh"
+source ~/scripts/gitprompt/gitprompt.sh
 
