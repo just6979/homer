@@ -241,5 +241,5 @@ alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests
 
 alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
 
-source ~/scripts/gitprompt/gitprompt.sh
+alias gitprompt="source ~/scripts/gitprompt/gitprompt.sh"
 
