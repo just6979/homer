@@ -258,3 +258,9 @@ fi
 
 alias gprompt="source ~/scripts/gitprompt/gitprompt.sh"
 
+# macos
+if [[ -e /Library/Frameworks/Python.framework/Versions/3.7/bin/virtualenvwrapper.sh ]]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+    source /Library/Frameworks/Python.framework/Versions/3.7/bin/virtualenvwrapper.sh
+fi
+
