@@ -32,9 +32,14 @@ export USE_CCACHE=1
 export CCACHE_DIR='/temp/ccache/'
 
 
-#echo -n 'bash, '
-shopt -s cmdhist
 shopt -s histappend
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='bg:fg:history'
+shopt -s cmdhist
+export PROMPT_COMMAND='history -a'
+
 shopt -s no_empty_cmd_completion
 #shopt -s nullglob
 
