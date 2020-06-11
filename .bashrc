@@ -260,20 +260,14 @@ fi
 export SDKMAN_DIR="/home/jwhite/.sdkman"
 [[ -s "/home/jwhite/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jwhite/.sdkman/bin/sdkman-init.sh"
 
-export PATH="${HOME}/.pyenv/bin:${PATH}"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # centos
 if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
 fi
-
 # fedora
 if [[ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]]; then
     source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
-
 # ubuntu
 if [[ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
