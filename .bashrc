@@ -31,7 +31,6 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export USE_CCACHE=1
 export CCACHE_DIR='/temp/ccache/'
 
-
 shopt -s histappend
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
@@ -246,6 +245,25 @@ alias dev_test_net="e2e_single_seg.py -e dev -v 3 -l net -f ~/Code/sms/sms-tests
 
 alias my_test="e2e_single_seg.py -e jwtest -v 3 -l java -f ~/Code/sms/sms-tests/data/java/1.jar -r "
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jwhite/.sdkman"
+[[ -s "/home/jwhite/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jwhite/.sdkman/bin/sdkman-init.sh"
+
+export PATH="${HOME}/.pyenv/bin:${PATH}"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # centos
 if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
@@ -262,10 +280,4 @@ if [[ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
 fi
 
 alias gprompt="source ~/scripts/gitprompt/gitprompt.sh"
-
-# macos
-if [[ -e /Library/Frameworks/Python.framework/Versions/3.7/bin/virtualenvwrapper.sh ]]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-    source /Library/Frameworks/Python.framework/Versions/3.7/bin/virtualenvwrapper.sh
-fi
 
