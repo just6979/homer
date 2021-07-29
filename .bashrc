@@ -275,3 +275,11 @@ fi
 
 alias gprompt="source ~/scripts/gitprompt/gitprompt.sh"
 
+
+export PATH="${HOME}/.pyenv/bin:${PATH}"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+complete -C /usr/bin/terraform terraform
+export PATH="$HOME/.tfenv/bin:$PATH"
