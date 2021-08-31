@@ -280,6 +280,8 @@ export PATH="${HOME}/.pyenv/bin:${PATH}"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+export PATH=$PATH:/home/jwhite/.local/bin
 
 complete -C /usr/bin/terraform terraform
 export PATH="$HOME/.tfenv/bin:$PATH"
+
