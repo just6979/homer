@@ -256,10 +256,6 @@ if ! shopt -oq posix; then
     fi
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/jwhite/.sdkman"
-[[ -s "/home/jwhite/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jwhite/.sdkman/bin/sdkman-init.sh"
-
 # centos
 if [[ -e /usr/bin/virtualenvwrapper.sh ]]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
@@ -284,4 +280,8 @@ export PATH=$PATH:/home/jwhite/.local/bin
 
 complete -C /usr/bin/terraform terraform
 export PATH="$HOME/.tfenv/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jwhite/.sdkman"
+[[ -s "/home/jwhite/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jwhite/.sdkman/bin/sdkman-init.sh"
 
