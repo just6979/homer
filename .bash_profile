@@ -5,6 +5,10 @@ eval `ssh-agent -s`
 # load the ssh keys. ctrl-d or empty string cancels if you don't want them in memory for this session
 ssh-add
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
