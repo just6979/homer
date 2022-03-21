@@ -31,16 +31,21 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export USE_CCACHE=1
 export CCACHE_DIR='/temp/ccache/'
 
+shopt -s cmdhist
 shopt -s histappend
+shopt -s histverify
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoredups
 export HISTIGNORE='bg:fg:history'
-shopt -s cmdhist
 export PROMPT_COMMAND='history -a'
 
 shopt -s no_empty_cmd_completion
-#shopt -s nullglob
+shopt -s nullglob
+shopt -s cdspell
+shopt -s dirspell
+
+set keyword
 
 #echo -n 'prompt, '
 #'user@host:cwd[err]$ '
