@@ -38,7 +38,6 @@ export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export HISTCONTROL=ignoredups
 export HISTIGNORE='bg:fg:history'
-export PROMPT_COMMAND='history -a'
 
 shopt -s no_empty_cmd_completion
 shopt -s nullglob
