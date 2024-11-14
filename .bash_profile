@@ -6,25 +6,19 @@ eval `ssh-agent -s`
 ssh-add
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+if [ -f $PYENV_ROOT/bin/pyenv ]; then
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init --path)"
+fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-# WSL
-if [[ -e /usr/bin/wslsys ]]; then
-    if [[ ! -d /run/screen ]]; then
-        echo "Found WSL, enabling screen"
-        sudo mkdir -pm 777 /run/screen
-    fi
-fi
-
-# if $STY is not set...
-if [ -z "$STY" ]; then
-    screen -ARR
-fi
-
 export PATH="$HOME/.poetry/bin:$PATH"
+
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+
