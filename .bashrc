@@ -283,6 +283,12 @@ export PATH=$PATH:/home/jwhite/.local/bin
 complete -C /usr/bin/terraform terraform
 export PATH="$HOME/.tfenv/bin:$PATH"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.cargo/env"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/justin/google-cloud-sdk/path.bash.inc' ]; then . '/home/justin/google-cloud-sdk/path.bash.inc'; fi
 
