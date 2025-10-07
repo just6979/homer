@@ -2,6 +2,7 @@
 
 # alias for using git within ~
 alias hgit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
+alias lazyhgit="lazygit --work-tree=$HOME --git-dir=$HOME/.homer.git"
 
 function setup_homer {
 	HOMER=~/homer
@@ -92,6 +93,7 @@ alias t='tmux'
 alias tS='tmux new -s'
 alias tls='tmux list-sessions'
 alias ta='tmux attach-session'
+alias tks='tmux kill-session -a'
 alias trd='tmux --help'
 alias tx='tmux --help'
 
