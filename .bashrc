@@ -102,6 +102,9 @@ alias ta='tmux attach-session'
 alias trd='tmux --help'
 alias tx='tmux --help'
 
+## docker aliases
+alias docker-build-git='docker build -t tide-catcher-next:latest -t tide-catcher-next:$(git rev-parse --short HEAD) .'
+
 ## fix sudo disabling aliases
 alias sudo='sudo '
 
