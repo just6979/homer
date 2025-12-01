@@ -97,8 +97,8 @@ alias tks='tmux kill-session -a'
 alias trd='tmux --help'
 alias tx='tmux --help'
 
-## docker aliases
-alias docker-build-git='docker build -t tide-catcher-next:latest -t tide-catcher-next:$(git rev-parse --short HEAD) .'
+## docker helpers
+docker-build-latest-tag() { docker build -t "$1":latest -t "$1":$(git rev-parse --short HEAD) .; }
 
 ## fix sudo disabling aliases
 alias sudo='sudo '
@@ -228,16 +228,19 @@ if ! shopt -oq posix; then
     fi
 fi
 
-export PATH="${HOME}/.pyenv/bin:${PATH}"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_HOME=${HOME}.pyenv/bin
+export PATH="${PYENV_HOME}:${PATH}"
+if [ -f ${PYENV_HOME}/pyenv ]; then 
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 export PATH=$PATH:/home/jwhite/.local/bin
 
 complete -C /usr/bin/terraform terraform
 export PATH="$HOME/.tfenv/bin:$PATH"
 
-eval "$(starship init bash)"
+if [ -f /usr/local/bin/starship ]; then eval "$(starship init bash)"; fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -252,6 +255,6 @@ if [ -f '/home/justin/google-cloud-sdk/path.bash.inc' ]; then . '/home/justin/go
 if [ -f '/home/justin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/justin/google-cloud-sdk/completion.bash.inc'; fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/jwhite/.sdkman"
-[[ -s "/home/jwhite/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jwhite/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
