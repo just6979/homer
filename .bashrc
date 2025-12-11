@@ -80,6 +80,9 @@ alias jtop='htop -u justin'
 #alias disknice='sudo ionice -c 3 -p $$'
 alias hist='history | grep'
 
+## nearlyfreespeech.net shortcuts
+alias nfs_ssh="ssh just6979_justinwhite@ssh.nyc1.nearlyfreespeech.net"
+
 ## screen shortcuts
 alias s='screen -AOUR'
 alias sS='s -S'
