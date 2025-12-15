@@ -46,8 +46,6 @@ shopt -s nullglob
 shopt -s cdspell
 shopt -s dirspell
 
-set keyword
-
 #'user@host:cwd[err]$ '
 #export PS1='\u@\h:\w/[$?]\$ ';
 export PS1='\[\e[01;32m\]\u@\h\[\e[m\]:\[\e[01;34m\]\w/\[\e[m\]\[\e[00;35m\][$?]\[\e[01;32m\]\$ \[\e[m\]'
