@@ -16,7 +16,7 @@ eval "$(pyenv init - bash)"
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+    . ~/.bashrc
 fi
 
 START_TMUX=0
