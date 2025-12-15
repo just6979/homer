@@ -1,9 +1,12 @@
 # .bash_profile
 
-# load the ssh key agent
-eval `ssh-agent -s`
-# load the ssh keys. ctrl-d or empty string cancels if you don't want them in memory for this session
-ssh-add
+LOAD_SSH_KEYS=0
+if [[ $LOAD_SSH_KEYS -eq 1 ]]; then
+    # load the ssh key agent
+    eval `ssh-agent -s`
+    # load the ssh keys. ctrl-d or empty string cancels if you don't want them in memory for this session
+    ssh-add
+fi
 
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -f $PYENV_ROOT/bin/pyenv ]; then
@@ -16,9 +19,10 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-export PATH="$HOME/.poetry/bin:$PATH"
-
-if [ -x "$(command -v tmux)" ] && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    tmux new-session
+START_TMUX=0
+if [[ $START_TMUX -eq 1 ]]; then
+    if [ -x "$(command -v tmux)" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
+        tmux new-session
+    fi
 fi
 
