@@ -21,7 +21,7 @@ function setup_homer {
 
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/Apps:$HOME/bin:$HOME/.gem/ruby/1.8/bin:$PATH:/opt/nvim-linux-x86_64/bin
+export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/Apps:$HOME/bin:$PATH
 export EDITOR='vim'
 if [[ -x $(type -P nvim) ]]; then
 	export EDITOR='nvim'
