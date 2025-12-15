@@ -212,8 +212,9 @@ eval "$(pyenv virtualenv-init -)"
 
 export PATH=$PATH:/home/jwhite/.local/bin
 
-complete -C /usr/bin/terraform terraform
-export PATH="$HOME/.tfenv/bin:$PATH"
+# complete -C /usr/bin/terraform terraform
+# export PATH="$HOME/.tfenv/bin:$PATH"
+
 
 if [ -f /usr/local/bin/starship ]; then eval "$(starship init bash)"; fi
 
