@@ -101,6 +101,9 @@ alias tx='tmux --help'
 ## docker helpers
 docker-build-latest-tag() { docker build -t "$1":latest -t "$1":$(git rev-parse --short HEAD) .; }
 
+## fix sudo disabling aliases
+alias sudo='sudo '
+
 # make ls show colors and filetype symbols
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 # Linux uses GNU ls
