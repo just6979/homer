@@ -228,12 +228,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
-export PYENV_HOME=${HOME}.pyenv/bin
-export PATH="${PYENV_HOME}:${PATH}"
-if [ -f ${PYENV_HOME}/pyenv ]; then 
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+eval "$(pyenv virtualenv-init -)"
 
 export PATH=$PATH:/home/jwhite/.local/bin
 
