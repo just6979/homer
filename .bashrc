@@ -213,7 +213,7 @@ export PATH=$PATH:/home/jwhite/.local/bin
 # complete -C /usr/bin/terraform terraform
 # export PATH="$HOME/.tfenv/bin:$PATH"
 
-USE_STARSHIP=0
+USE_STARSHIP=1
 if [[ $USE_STARSHIP -eq 1 ]]; then
     if [ -f /usr/local/bin/starship ]; then eval -- "$(/usr/local/bin/starship init bash --print-full-init)"; fi
 fi

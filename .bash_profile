@@ -1,6 +1,6 @@
 # .bash_profile
 
-LOAD_SSH_KEYS=0
+LOAD_SSH_KEYS=1
 if [[ $LOAD_SSH_KEYS -eq 1 ]]; then
     # load the ssh key agent
     eval `ssh-agent -s`
@@ -19,7 +19,7 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-START_TMUX=0
+START_TMUX=1
 if [[ $START_TMUX -eq 1 ]]; then
     if [ -x "$(command -v tmux)" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
         tmux new-session
