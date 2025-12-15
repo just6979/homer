@@ -215,8 +215,10 @@ export PATH=$PATH:/home/jwhite/.local/bin
 # complete -C /usr/bin/terraform terraform
 # export PATH="$HOME/.tfenv/bin:$PATH"
 
-
-if [ -f /usr/local/bin/starship ]; then eval "$(starship init bash)"; fi
+USE_STARSHIP=0
+if [[ $USE_STARSHIP -eq 1 ]]; then
+    if [ -f /usr/local/bin/starship ]; then eval -- "$(/usr/local/bin/starship init bash --print-full-init)"; fi
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
