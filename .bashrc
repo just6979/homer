@@ -81,7 +81,7 @@ alias jtop='htop -u justin'
 alias hist='history | grep'
 
 ## nearlyfreespeech.net shortcuts
-alias nfs_ssh="ssh just6979_justinwhite@ssh.nyc1.nearlyfreespeech.net"
+alias nfs_ssh='ssh just6979_justinwhite@ssh.nyc1.nearlyfreespeech.net'
 
 ## screen shortcuts
 alias s='screen -AOUR'
