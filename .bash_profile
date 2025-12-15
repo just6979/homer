@@ -9,10 +9,10 @@ if [[ $LOAD_SSH_KEYS -eq 1 ]]; then
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
-if [ -f $PYENV_ROOT/bin/pyenv ]; then
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init --path)"
-fi
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+# export PATH=$HOME/.local/bin:$PATH
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
