@@ -24,3 +24,5 @@
 /.appcfg_nag
 /.appcfg_oauth2_tokens
 /_viminfo
+*.kate-swp
+
