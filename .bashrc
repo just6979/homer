@@ -4,7 +4,7 @@
 alias hgit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
 alias lazyhgit="lazygit --work-tree=$HOME --git-dir=$HOME/.homer.git"
 
-function setup_homer {
+setup_homer() {
 	HOMER=~/homer
 	OLDWD=`pwd`
 	cd ~
@@ -76,7 +76,7 @@ alias psfind='ps aux | grep -i'
 alias jtop='htop -u justin'
 # make the current shell (and its children) run IO at idle priority
 #alias disknice='sudo ionice -c 3 -p $$'
-alias hist='history | grep'
+hist() { history | grep "$@"; }
 
 ## nearlyfreespeech.net shortcuts
 alias nfs_ssh='ssh just6979_justinwhite@ssh.nyc1.nearlyfreespeech.net'
@@ -100,9 +100,6 @@ alias tx='tmux --help'
 
 ## docker helpers
 docker-build-latest-tag() { docker build -t "$1":latest -t "$1":$(git rev-parse --short HEAD) .; }
-
-## fix sudo disabling aliases
-alias sudo='sudo '
 
 # make ls show colors and filetype symbols
 export LSCOLORS='Exfxcxdxbxegedabagacad'
@@ -157,18 +154,16 @@ if [[ -e /etc/debian_version ]]; then
 fi
 
 if [[ -e /etc/fedora-release ]]; then
-	#echo 'found Fedora base, using dnf.'
-	alias pkg='dnf'
-    alias spkg='sudo pkg'
-    alias pkginfo='pkg info'
-    alias pkglist='pkg list'
-    alias pkgsearch='pkg search'
+	#echo 'found F'edora base, using dnf.'
+	pkg() { dnf "$@"; }
+	spkg() { sudo dnf "$@"; }
+    pkginfo() { pkg info $1; }
+    pkglist() { pkg list $1; }
+    pkgsearch() { pkg search $1; }
+    pkgprovides() { pkg provides $1; }
 	alias pkgrefresh='spkg makecache'
-	alias pkgupgrade='spkg update'
-	alias pkgupgrademore='spkg upgrade'
+	alias pkgupgrade='spkg upgrade'
     alias pkgclean='spkg clean all'
-    alias pkgsource='spkg source'
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 fi
 
 if [[ -e /etc/centos-release ]]; then
@@ -185,20 +180,14 @@ if [[ -e /etc/centos-release ]]; then
     alias pkgsource='spkg source'
 fi
 
-alias pkginstall='spkg install'
-alias pkgremove='spkg remove'
+# non-distro-specific packagin shortcuts
+pkginstall() { spkg install $1; }
+pkgremove() { spkg remove $$; }
+pkgadd() { spkg install $1; }
+pkgrm() { spkg remove $$; }
 alias pkgupdate='pkgrefresh && pkgupgrade'
-alias pkgadd='pkginstall'
-alias pkgrm='pkgremove'
-function pkgsort {
-    pkgsearch $1 | sort;
-}
-function pkgless {
-    pkgsearch $1 | sort | less;
-}
-function pkgsearchall {
-    pkgsearch all $1 | less;
-}
+pkgsort() { pkgsearch $1 | sort; }
+pkgless() { pkgsearch $1 | sort | less; }
 
 # reuse ssh-agent
 #if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
@@ -236,3 +225,10 @@ if [ -f '/home/justin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/jus
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# fnm
+FNM_PATH="/home/justin/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
