@@ -157,10 +157,10 @@ if [[ -e /etc/fedora-release ]]; then
 	#echo 'found F'edora base, using dnf.'
 	pkg() { dnf "$@"; }
 	spkg() { sudo dnf "$@"; }
-    pkginfo() { pkg info $1; }
-    pkglist() { pkg list $1; }
-    pkgsearch() { pkg search $1; }
-    pkgprovides() { pkg provides $1; }
+    pkginfo() { pkg info "$@"; }
+    pkglist() { pkg list "$@"; }
+    pkgsearch() { pkg search "$@"; }
+    pkgprovides() { pkg provides "$@"; }
 	alias pkgrefresh='spkg makecache'
 	alias pkgupgrade='spkg upgrade'
     alias pkgclean='spkg clean all'
@@ -181,13 +181,13 @@ if [[ -e /etc/centos-release ]]; then
 fi
 
 # non-distro-specific packagin shortcuts
-pkginstall() { spkg install $1; }
-pkgremove() { spkg remove $$; }
-pkgadd() { spkg install $1; }
-pkgrm() { spkg remove $$; }
+pkginstall() { spkg install "$@"; }
+pkgremove() { spkg remove "$@"; }
+pkgadd() { spkg install "$@"; }
+pkgrm() { spkg remove "$@"; }
 alias pkgupdate='pkgrefresh && pkgupgrade'
-pkgsort() { pkgsearch $1 | sort; }
-pkgless() { pkgsearch $1 | sort | less; }
+pkgsort() { pkgsearch "$@" | sort; }
+pkgless() { pkgsearch "$@" | sort | less; }
 
 # reuse ssh-agent
 #if [ -S "$SSH_AUTH_SOCK" ] && [ ! -h "$SSH_AUTH_SOCK" ]; then
