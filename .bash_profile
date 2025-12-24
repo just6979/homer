@@ -9,8 +9,10 @@ if [[ $LOAD_SSH_KEYS -eq 1 ]]; then
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
+if [[ -d $PYENV_ROOT/bin ]]; then
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init - bash)"
+fi
 
 # export PATH=$HOME/.local/bin:$PATH
 

@@ -198,7 +198,9 @@ pkgless() { pkgsearch "$@" | sort | less; }
 #alias agent_start='eval `ssh-agent`'
 #alias agent_kill='eval `ssh-agent -k`'
 
-eval "$(pyenv virtualenv-init -)"
+if [[ -d $PYENV_ROOT/bin ]]; then
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 export PATH=$PATH:/home/jwhite/.local/bin
 
