@@ -1,22 +1,22 @@
 #!/bin/bash
 
 # alias for using git within ~
-alias hgit="git --work-tree=$HOME --git-dir=$HOME/.homer.git"
-alias lazyhgit="lazygit --work-tree=$HOME --git-dir=$HOME/.homer.git"
+alias hgit='git --work-tree=$HOME --git-dir=$HOME/.homer.git'
+alias lazyhgit='lazygit --work-tree=$HOME --git-dir=$HOME/.homer.git'
 
 setup_homer() {
 	HOMER=~/homer
-	OLDWD=`pwd`
-	cd ~
-	for FILE in `/bin/ls -A -1 $HOMER`
+	OLDWD=$(pwd)
+	cd ~ || exit
+	for FILE in $(/bin/ls -A -1 $HOMER)
 	do
-		if [ -e $FILE ]; then
-			echo $FILE exists, backing it up to $FILE.orig
-			mv $FILE $FILE.orig
+		if [ -e "$FILE" ]; then
+			echo "$FILE exists, backing it up to $FILE.orig"
+			mv "$FILE" "$FILE".orig
 		fi
-		ln -s $HOMER/$FILE
+		ln -s $HOMER/"$FILE"
 	done
-	cd $OLDWD
+	cd "$OLDWD" || exit
 }
 
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
@@ -99,27 +99,27 @@ alias trd='tmux --help'
 alias tx='tmux --help'
 
 ## docker helpers
-docker-build-latest-tag() { docker build -t "$1":latest -t "$1":$(git rev-parse --short HEAD) .; }
+docker-build-latest-tag() { docker build -t "$1":latest -t "$1":"$(git rev-parse --short HEAD)" .; }
 
 # make ls show colors and filetype symbols
 export LSCOLORS='Exfxcxdxbxegedabagacad'
 # Linux uses GNU ls
-if uname -a | egrep -i "linux" &> /dev/null; then
+if uname -a | grep -E -i "linux" &> /dev/null; then
     alias ls='ls -F --color=auto';
 fi
 # BSDs don't
-if uname -a | egrep -i "bsd" &> /dev/null; then
+if uname -a | grep -E -i "bsd" &> /dev/null; then
     alias ls='ls -F -G';
 fi
 # Android uses Busybox
-if uname -a | egrep -i " armv7" &> /dev/null; then
+if uname -a | grep -E -i " armv7" &> /dev/null; then
     alias ls='busybox ls -F --color=auto';
     # also remove some -i prompting, busybox doesn't like them
     unalias rm
     unalias mv
 fi
 # raspberrypi also uses GNU ls
-if uname -a | egrep -i "armv6" &> /dev/null; then
+if uname -a | grep -E -i "armv6" &> /dev/null; then
     alias ls='ls -F --color=auto';
 fi
 
@@ -232,5 +232,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 FNM_PATH="/home/justin/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
+  eval "$(fnm env)"
 fi

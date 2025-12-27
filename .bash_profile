@@ -3,7 +3,7 @@
 LOAD_SSH_KEYS=1
 if [[ $LOAD_SSH_KEYS -eq 1 ]]; then
     # load the ssh key agent
-    eval `ssh-agent -s`
+    eval "$(ssh-agent -s)"
     # load the ssh keys. ctrl-d or empty string cancels if you don't want them in memory for this session
     ssh-add
 fi
@@ -18,7 +18,7 @@ fi
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+    . "$HOME/.bashrc"
 fi
 
 START_TMUX=1
