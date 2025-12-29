@@ -69,6 +69,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 ## helpers
+alias powstat="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e energy-rate -e state"
 alias t='tail -n$LINES -f'
 alias cdc='cd && clear'
 alias rebash='source ~/.bashrc'
