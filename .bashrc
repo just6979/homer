@@ -19,6 +19,10 @@ setup_homer() {
 	cd "$OLDWD" || exit
 }
 
+# disable ctrl-s/q freezing terminal
+stty -ixon
+
+# prefs and settings
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
 export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/Apps:$HOME/bin:$PATH
