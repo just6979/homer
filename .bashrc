@@ -67,6 +67,8 @@ if [[ $TERM == 'screen' ]]; then
 	export PROMPT_COMMAND='echo -ne "\033k\033\\"'
 fi
 
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 ## be paranoid and prompt, unless forced with -f
 alias cp='cp -ip'
 alias mv='mv -i'
