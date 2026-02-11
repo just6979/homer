@@ -29,7 +29,7 @@ fi
 # prefs and settings
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
-export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/Apps:$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/scripts:$HOME/Apps:$HOME/bin:$HOME/Android/Sdk/platform-tools:$PATH
 export EDITOR='vim'
 if [[ -x $(type -P nvim) ]]; then
 	export EDITOR='nvim'
