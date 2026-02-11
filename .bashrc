@@ -22,6 +22,10 @@ setup_homer() {
 # disable ctrl-s/q freezing terminal
 stty -ixon
 
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+fi
+
 # prefs and settings
 umask 0002 # file perms: 644 -rw-rw-r-- (755 drwxrwxr-x for dirs)
 export EMAIL='just6979@gmail.com'
