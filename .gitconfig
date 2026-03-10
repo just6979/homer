@@ -46,6 +46,7 @@
 	autoupdate = true
 [core]
 	excludesfile = ~/.gitignore
+	longpaths = true
 [rebase]
 	autoSquash = true
 	autoStash = true
@@ -57,3 +58,5 @@
 	rebase = true
 ## end from
 
+[http]
+	postBuffer = 524288000
