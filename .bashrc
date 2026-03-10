@@ -135,6 +135,8 @@ if uname -a | grep -E -i "armv6" &> /dev/null; then
     alias ls='ls -F --color=auto';
 fi
 
+if [[ $(command -v lsd) ]]; then alias ls='lsd'; fi
+
 alias lsa='ls -A'
 alias lss='ls -sh'
 alias las='lss -A'
@@ -236,13 +238,13 @@ if [ -f '/home/justin/google-cloud-sdk/path.bash.inc' ]; then . '/home/justin/go
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/justin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/justin/google-cloud-sdk/completion.bash.inc'; fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # fnm
 FNM_PATH="/home/justin/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "$(fnm env)"
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
