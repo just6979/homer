@@ -40,7 +40,7 @@ export LESS='-FMRs~X -x4'
 export VIRTUALENV_USE_DISTRIBUTE=true
 export PIP_RESPECT_VIRTUALENV=true
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export PLATFORMIO_BUILD_CACHE_DIR=.build-cache
+export PLATFORMIO_BUILD_CACHE_DIR=.pio/build-cache
 
 shopt -s cmdhist
 shopt -s histappend
