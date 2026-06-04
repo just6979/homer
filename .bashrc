@@ -214,6 +214,8 @@ pkgless() { pkgsearch "$@" | sort | less; }
 #alias agent_kill='eval `ssh-agent -k`'
 
 if [[ -d $PYENV_ROOT/bin ]]; then
+    # re-init pyenv because i'm not using login shells in tmux
+    eval "$(pyenv init - bash)"
     eval "$(pyenv virtualenv-init -)"
 fi
 
