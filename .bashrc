@@ -247,6 +247,11 @@ if [ -d "$FNM_PATH" ]; then
   eval "$(fnm env)"
 fi
 
+if type -p fzf >/dev/null 2>/dev/null; then
+    eval "$(fzf --bash)"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+. "/home/justin/.acme.sh/acme.sh.env"
